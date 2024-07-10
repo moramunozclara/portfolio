@@ -1,0 +1,905 @@
+/* CSS RESET ⬇⬇⬇⬇⬇  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Set the sizing of an element to include it's border */
+}
+
+* {
+    margin: 0;
+    /* Set the default margin to 0 */
+    padding: 0;
+    /* Set the default padding to 0 */
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    /* Turn off numbered and unordered list decoration */
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+    /* Make the scrolling inside of any scrollable element smooth */
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    /* Makes link undelines look better */
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+    max-width: 100%;
+    /* Makes it responsive */
+    height: auto;
+    /* Makes it responsive */
+    vertical-align: middle;
+    /* Makes text next to inline images look better */
+    font-style: italic;
+    /* If the images don't load it makes the alt decription look better */
+    background-repeat: no-repeat;
+    /* The background repeat and size are there if you want to load a picture first like a backroung image that is worse quality while the better quality image loads */
+    background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    /* Makes these elements inherit fonts */
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/* Remove excess padding and border in Firefox 4+ */
+&::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Turns off animation for people who don't want to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
+}
+
+body,
+html {
+    height: 100%;
+    /* Makes the body element full screen */
+    scroll-behavior: smooth;
+    /* Makes normal scrolling smooth */
+}
+
+/* FINAL DEL CSS RESET ⬆⬆⬆ */
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: var(--tipografia-sansserif);
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/* TIPOGRAFÍAS */
+
+
+/* Pinyon Script: CSS class */
+.pinyon-script-regular {
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Zen Kaku Gothic New: CSS class  */
+.zen-kaku-gothic-new-light {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.zen-kaku-gothic-new-regular {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.zen-kaku-gothic-new-medium {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.zen-kaku-gothic-new-bold {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.zen-kaku-gothic-new-black {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+
+
+/* ROOT */
+:root {
+    --white: #FFFFFF;
+
+    --pink: rgb(240, 194, 201);
+
+    --magenta: pink;
+
+    --black: #121212;
+    --tamano-links-menu-movil: 6rem;
+
+    --tamano-header-links: (0.75rem, 3vw + 0.5rem, 1.5rem);
+
+    --tamano-titulo: clamp(2.5rem, 4vw + 0.5rem, 7rem);
+    --tamano-subtitulo: clamp(0.95rem, 2vw + 0.5rem, 2rem);
+    --titulo_productos: clamp(2.4rem, 3.5vw + 0.5rem, 3rem);
+    --tamano-titulo-parrafo: clamp(1.8rem, 3vw + 0.5rem, 2.6rem);
+    --tamano-parrafo: clamp(0.75rem, 2vw + 0.5rem, 1.5rem);
+    --tamano-parrafo-2: clamp(0.75rem, 3vw + 0.5rem, 1.5rem);
+    --tamano-button-text: clamp(1rem, 3vw + 0.5rem, 1.5rem);
+
+    --tipografia-script: "Pinyon Script", cursive;
+    --tipografia-sansserif: "Zen Kaku Gothic New", sans-serif;
+}
+
+
+h1 {
+    font-size: var(--tamano-titulo);
+    font-family: var(--tipografia-script);
+}
+
+h2 {
+    /* color: var(--white); */
+    font-size: var(--tamano-titulo);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: var(--tamano-titulo-parrafo);
+    line-height: 1.2;
+}
+
+p {
+    line-height: 1.2;
+}
+
+
+
+
+
+/* MOBILE FIRST */
+
+/* Index en construcción */
+.en_construccion {
+    font-size: 60px;
+    margin: 5rem;
+    background-color: var(--white);
+}
+
+/* Estilos para la pagina Sobre mí ______________________________________________*/
+.pagina-sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 1.5rem ;
+    padding: 1.5rem;
+
+    body {
+        overflow-x: hidden;
+        margin: 0;
+    }
+
+    .words-alignment {
+        font-size: var(--tamano-parrafo);
+        text-align: center;
+        background-color: var(--white);
+        padding: 0.5rem;
+
+    }
+
+    .word {
+        position: absolute;
+        margin: 1rem;
+    }
+
+    .word-top {
+        top: 0;
+    }
+
+    .word-bottom {
+        bottom: 0;
+    }
+
+    .word-left {
+        left: 0;
+    }
+
+    .word-right {
+        right: 0;
+    }
+
+    .rotated-minus90 {
+        transform: rotate(-90deg);
+        position: relative;
+        left: -50%;
+        bottom: -3%
+    }
+
+    .rotated-plus90 {
+        transform: rotate(90deg);
+        position: relative;
+        right: -50%;
+        bottom: 3%
+    }
+
+
+    .Graph-container {
+        position: absolute;
+        z-index: 2;
+        /* se coloca encima de .Graph-sectors */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: calc(100vw - 4rem);
+        /* Resta el padding horizontal */
+        height: calc(100vh - 4rem);
+        /* Resta el padding vertical */
+    }
+
+
+
+    .Graph-sectors {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100vw;
+        /* Ancho total de la pantalla */
+        height: 100vh;
+        /* Altura total de la pantalla */
+        z-index: 1;
+        /* se coloca encima debajo de .Graph-container */
+        margin: 0;
+        width: calc(100vw - 5rem);
+        height: calc(100vh - 5rem);
+        /* Ancho y alto totales de la pantalla, menos los margenes */
+
+    }
+
+    .Graph-top,
+    .Graph-bottom {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        /* Ocupa el ancho completo del gráfico */
+        height: 50%;
+        /* Ambas mitades suman el 100% vertical */
+        position: relative;
+    }
+
+    .Graph-topLeft,
+    .Graph-topRight,
+    .Graph-bottomLeft,
+    .Graph-bottomRight {
+        width: 50%;
+        /* Divide el ancho en dos */
+        height: 100%;
+        /* Ocupa la altura completa del gráfico */
+        position: relative;
+    }
+
+
+    /* Estilo de los puntos del gráfico */
+    .point {
+        border-radius: 50%;
+        background-color: var(--pink);
+        width: 80px;
+        height: 80px;
+        min-height: 20px;
+        min-width: 20px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+    /* Estilo de los textos de los puntos del gráfico */
+    .point-text {
+        padding: 1rem;
+        text-align: center;
+        font-size: var(--tamano-parrafo);
+    }
+
+
+    /* Colocación de los puntos según el sector
+    al que he asignado su posición */
+    .center {
+        align-self: center;
+    }
+    .topLeft {
+        left: 15%;
+        top: 15%;
+    }
+    .topRight {
+        right: 10%;
+        top: 25%;
+    }
+    .bottomLeft {
+        left: 15%;
+        bottom: 25%;
+        /* background-image: url(/img/lazo.png); */
+    }
+    .bottomRight {
+        right: 15%;
+        bottom: 15%;
+    }
+
+
+    /* SECTORES del gráfico, sus bordes negros
+    crean las líneas del gráfico */
+    .Graph-topLeft {
+        border-right: 1px solid var(--black);
+    }
+
+    .Graph-topRight {
+        border-left: 1px solid var(--black);
+    }
+
+    .Graph-bottomLeft {
+        border-right: 1px solid var(--black);
+    }
+
+    .Graph-bottomRight {
+        border-left: 1px solid var(--black);
+
+    }
+
+    .Graph-top {
+        border-bottom: 1px solid var(--black);
+    }
+
+    .Graph-bottom {
+        border-top: 1px solid var(--black);
+    }
+
+}
+
+
+
+
+/* Estilos para la pagina Trabajos ______________________________________________*/
+.pagina-trabajos {
+    margin: 0 0 5rem;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+
+
+    .Trabajos-filters {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1.5rem 0rem;
+
+    }
+
+
+    .Trabajos-button {
+        display: inline-block;
+        padding: 1rem 3rem;
+        margin: 0.5rem 1.5rem;
+
+        font-size: var(--tamano-header-links);
+        font-family: var(--tipografia-sansserif);
+        /* font-weight: bold; */
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid var(--black);
+        border-radius: 5px;
+        background-color: var(--pink);
+        color: var(--black);
+
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .Trabajos-buttonText {
+        font-size: var(--tamano-button-text);
+    }
+
+    .Trabajos-button:hover {
+        background-color: var(--black);
+        color: var(--white);
+        /* border-color: var(--black); */
+    }
+
+
+    .Trabajos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Tres columnas con ancho variable */
+        gap: 2rem;
+        /* Espacio entre elementos */
+        justify-content: center;
+        /* Centrar el contenido horizontalmente */
+    }
+
+
+    .Trabajo-preview {
+        background-color: transparent;
+        padding: 1.5rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        color: rgba(0, 0, 0, 0.011);
+        text-shadow: 10px 10px 10px #00000000;
+
+        font-size: var(--tamano-subtitulo);
+        overflow: hidden;
+        transition: background-size 1.5s, color 0.3s, text-shadow 0.3s;
+    }
+
+    .Trabajo-preview:hover {
+        background-size: calc(100% + 20%);
+        color: var(--white);
+        text-shadow: 0px 0px 20px var(--black);
+
+    }
+
+    .Trabajo-preview::before {
+        content: '';
+        display: flex;
+        padding-top: 100%;
+        /* Esto hará que el alto sea igual al ancho */
+    }
+
+    /* Estilos para elementos visibles */
+    .Trabajo-preview.isActive {
+        display: flex;
+
+    }
+
+    /* Estilos para elementos ocultos */
+    .Trabajo-preview.isHidden {
+        display: none;
+    }
+
+
+    .Trabajo-uxui--1 {
+        background-image: url('../img/ux-ui/anpec/claramora_anpec_2.jpg');
+    }
+
+    .Trabajo-uxui--2 {
+        background-image: url('../img/ux-ui/mindbloom/mindbloom_1.png');
+        background-position-y: 10%;
+    }
+
+    .Trabajo-uxui--3 {
+        background-image: url('../img/ux-ui/glintshop-concept/claramora_glint_shop_concept_1.png');
+    }
+
+
+    .Trabajo-grafico--1 {
+        background-image: url('../img/graphic-design/editorial/LIBRO_editorial.png');
+    }
+
+    .Trabajo-grafico--2 {
+        background-image: url('../img/graphic-design/serenates/SERENATES_Cartel.png');
+    }
+
+    .Trabajo-grafico--3 {
+        background-image: url('../img/graphic-design/casa_museu_benlliure/benlliure.png');
+    }
+
+
+    .Trabajo-3d--1 {
+        background-image: url('../img/3d/calzado.png');
+    }
+
+    .Trabajo-3d--2 {
+        background-image: url('../img/3d/museo.png');
+    }
+
+    .Trabajo-3d--3 {
+        background-image: url('../img/3d/mobiliario.png');
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Estilos para el bloque Header ______________________________________________*/
+.Header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    /* margin: 0rem 0rem 2rem 0rem; */
+    padding: 0.3rem 0rem;
+
+
+    background-color: var(--pink);
+
+    /* Estilos para la imagen de fondo */
+    .Header-picture--fondo {}
+
+    .Header-fondoImg {}
+
+    /* Estilos para la imagen del logo */
+    .Header-logo {}
+
+    .Header-logoImg {}
+
+
+    .Header-ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        height: 100%;
+        justify-content: center;
+
+
+
+
+    }
+
+    .Header-li {
+        margin: 0px 1rem;
+        text-align: center;
+        margin: 0.5rem;
+
+
+    }
+
+    .Header-a {
+        text-decoration: none;
+        color: var(--black);
+        font-family: var(--tipografia-script);
+        font-weight: 400;
+        font-style: normal;
+
+
+        font-size: var(--tamano-links-menu-movil);
+
+
+    }
+
+    .Header-menuButton {}
+
+    .Header-grupoSuperposicion {}
+
+    .Header-title {}
+
+    .Header-span {}
+
+    .Header-divider {}
+
+    .Header-descriptionBox {}
+
+    .Header-descriptionText {
+        font-size: var(--tamano-subtitulo);
+    }
+
+    .Header-btn {
+        display: block;
+
+
+    }
+
+    .Header-svg {
+        width: 2em;
+        height: 2em;
+    }
+
+    .Header-nav {
+        height: 100vh;
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+        /* justify-content:space-between; */
+        background-color: var(--pink);
+    }
+
+    /* MENÚ TOGGLE: Animación de apertura y cierre
+        > el menú baja (con transición suave)
+        > los links van del 0% al 100% de opacidad (con transición suave)
+    */
+
+    .Header-nav {
+        height: 0;
+        overflow: hidden;
+        transition: height 1s ease;
+    }
+
+    .Header-nav::before,
+    .Header-nav::after {
+        content: '';
+        display: block;
+        height: 0;
+        transition: height 0.5s ease;
+        /* Agrega una transición suave a la altura del pseudo-elemento */
+    }
+
+    .Header-nav.isActive {
+        height: 100vh;
+        /* Establece la altura del menú a "auto" para mostrarlo */
+
+    }
+
+    .Header-nav .Header-a {
+        opacity: 0;
+        /* Opacidad inicial */
+        transition: opacity 1s ease;
+        /* Transición suave */
+    }
+
+    .Header-nav.isActive .Header-a {
+        opacity: 1;
+        /* Opacidad cuando el menú está activo */
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* Estilos para el FORMULARIO ______________________________________________*/
+.pagina-contacta {
+    padding: 1.5rem;
+}
+
+.Formulario {
+    padding: 2rem;
+    margin: 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .Formulario-Form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Formulario-input {
+        margin: 2rem;
+        padding: 1rem;
+
+    }
+
+    .Formulario-select {
+        margin: 2rem;
+        padding: 1rem;
+
+    }
+
+    .Formulario-button {
+        padding: 1rem;
+        border: 1px solid var(--black);
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .Formulario-button:hover {
+        color: var(--white);
+        background-color: var(--pink);
+    }
+
+
+}
+
+
+/* Estilos para el bloque FOOTER ______________________________________________ */
+.Footer {
+    background-color: var(--pink);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    .Footer-ul {
+        margin: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Footer-li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+
+    .Footer-a {
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .Footer-logoImg {
+        height: 50px;
+    }
+
+    .Footer-span {
+        color: var(--black);
+    }
+}
+
+
+/* AJUSTES GENERALES ______________________________________________ */
+/* header,
+.red_logistica,
+.compromiso_calidad {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+} */
+
+
+
+.fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: none;
+    height: 100%;
+    width: auto;
+
+}
+
+
+.grupo_superposicion {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    top: 0;
+}
+
+.grupo_superposicion>* {
+    margin: 5%;
+}
+
+/* línea / filete de color magenta */
+.grupo_superposicion hr {
+    border: none;
+    height: 6px;
+    background-color: var(--pink);
+    margin: 20px 0;
+    width: 20%;
+}
+
+/* Para hacer varias líneas de texto con <span> </span> */
+h1,
+h2,
+h3,
+p {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+/* ____________________________________________
+ _____ MEDIA QUERY PARA DESKTOP _______________
+ ______________________________________________*/
+
+@media screen and (min-width: 768px) {
+
+    .Footer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .Footer-ul {
+        align-items: flex-start;
+
+    }
+
+
+
+    .point {
+        width: 120px;
+        height: 120px;
+    }
+
+
+}
+
+
+
+
+

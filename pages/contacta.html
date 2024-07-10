@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" defer src="../script/index.js"></script>
+
+
+
+
+</head>
+<body>
+    <header class="Header">
+        <!-- Barra superior de navegación con enlaces a las secciones de la web-->
+        <button class="Header-btn">
+            <svg class="Header-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          </svg>
+        </button>
+        <nav class="Header-nav">
+            <ul class="Header-ul">
+                <li class="Header-li"><a class="Header-a" href="sobre-mi.html" title="Sobre mí">Sobre mí</a></li>
+                <li class="Header-li"><a class="Header-a" href="trabajos.html" title="Trabajos">Trabajos</a></li>
+                <li class="Header-li"><a class="Header-a" href="https://es.linkedin.com/in/clara-mora-munoz" target="_blank" title="Currículum en LinkedIn">Currículum</a></li>
+                <li class="Header-li"><a class="Header-a" href="contacta.html" title="Contacta">Contacta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-contacta">
+      <h1 class="Main-title">Contacta</h1>
+
+      <section class="Formulario">
+        <form class="Formulario-Form" action="procesar_formulario.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input class="Formulario-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            <br class="Formulario-br">
+            <label for="apellidos">Apellidos:</label>
+            <input class="Formulario-input" type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required>
+            <br class="Formulario-br">
+            <label for="email">Email de contacto:</label>
+            <input class="Formulario-input" type="email" id="email" name="email" placeholder="Email" required>
+            <br class="Formulario-br">
+            <label for="telefono">Teléfono de contacto:</label>
+            <input class="Formulario-input" type="tel" id="telefono" name="telefono" placeholder="Teléfono de contacto (opcional)" required>
+            <br class="Formulario-br">
+            <label for="motivo">Motivo de contacto:</label>
+            <select class="Formulario-select" id="motivo" name="motivo[]" required>
+                <option value="Encargo">Tengo un proyecto para ti</option>
+                <option value="Consulta">Tengo una consulta</option>
+                <option value="Otros">Otros</option>
+            </select>
+            <br class="Formulario-br">
+            <label for="mensaje">Mensaje:</label>
+            <br class="Formulario-br">
+            <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+            <br class="Formulario-br">
+            <button class="Formulario-button" type="button" id="enviar">Enviar</button>
+        </form>
+    </section>
+
+    </main>
+
+
+    <footer class="Footer">
+        <nav class="Footer-nav">
+            <ul class="Footer-ul">
+                <li class="Footer-li"><a class="Footer-a" href="https://www.linkedin.com/in/clara-mora-munoz/" title="LinkedIn Clara Mora"><picture><img src="/img/icons/icons8-linkedin.svg" alt="LinkedIn icon"></picture> LinkedIn</a></li>
+                <li class="Footer-li"><a class="Footer-a" href="https://github.com/claramora" title="Github Clara Mora"><picture><img src="/img/icons/icons8-github.svg" alt="Github icon"></picture>Github</a></li>
+            </ul>
+        </nav>
+        <span class="Footer-span">Clara Mora © 2024 Todos los derechos reservados</span>
+    </footer>
+</body>
+
+</html>
+
