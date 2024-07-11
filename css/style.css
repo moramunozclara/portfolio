@@ -386,7 +386,7 @@ p {
     .bottomLeft {
         left: 15%;
         bottom: 25%;
-        /* background-image: url(/img/lazo.png); */
+        background-image: url(/img/lazo.png);
     }
     .bottomRight {
         right: 15%;
