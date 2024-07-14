@@ -347,26 +347,35 @@ p {
 
     /* Estilo de los puntos del gráfico */
     .point {
-        border-radius: 50%;
-        background-color: var(--pink);
-        width: 80px;
-        height: 80px;
-        min-height: 20px;
-        min-width: 20px;
+        /* border-radius: 50%; */
+        /* color rosa de fondo */
+        /* background-color: var(--pink); */
+        /* width: 80px;
+        height: 80px; */
+        /* min-height: 20px;
+        min-width: 20px; */
+
         position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
+
     }
 
 
     /* Estilo de los textos de los puntos del gráfico */
     .point-text {
-        padding: 1rem;
+        /* ancho del texto */
+        max-width: 160px;
         text-align: center;
+        padding: rem;
         font-size: var(--tamano-parrafo);
+        /* border-radius: 0.5rem; */
+
+        
     }
 
 
@@ -374,10 +383,19 @@ p {
     al que he asignado su posición */
     .center {
         align-self: center;
+        /* width: 100px;
+        height: 100px; */
     }
     .topLeft {
         left: 15%;
         top: 15%;
+        width: 100px;
+        height: 100px;
+
+        /* imagen ASCII ilustrativa */
+        background-image: url(/img/ojo1_ascii-modified.png);
+
+
     }
     .topRight {
         right: 10%;
@@ -386,13 +404,23 @@ p {
     .bottomLeft {
         left: 15%;
         bottom: 25%;
-        background-image: url(/img/lazo.png);
+
+        /* imagen ASCII ilustrativa */
+        background-image: url(/img/lazo_ascii-modified.png);
+
+
+
     }
     .bottomRight {
         right: 15%;
         bottom: 15%;
     }
 
+    .ascii {
+        /* tamaño de las imágenes ASCII */
+        width: 100px;
+        height: 100px;
+    }
 
     /* SECTORES del gráfico, sus bordes negros
     crean las líneas del gráfico */
