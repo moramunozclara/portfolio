@@ -362,8 +362,26 @@ p {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        /* transition: transform 2s ease-in; */
 
     }
+
+    .ascii {
+
+
+        opacity: 1;
+        transition: transform 2s ease-in;
+        animation: moreOpacity 3.5s forwards; ;
+
+
+    }
+
+    @keyframes moreOpacity {
+        0% { opacity: 0; }
+        100% { opacity: 1;}
+      }
+
+    
 
 
     /* Estilo de los textos de los puntos del gráfico */
@@ -842,13 +860,7 @@ p {
 
 
 /* AJUSTES GENERALES ______________________________________________ */
-/* header,
-.red_logistica,
-.compromiso_calidad {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-} */
+
 
 
 
@@ -863,29 +875,16 @@ p {
 }
 
 
-.grupo_superposicion {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    top: 0;
-}
 
-.grupo_superposicion>* {
-    margin: 5%;
-}
 
 /* línea / filete de color magenta */
-.grupo_superposicion hr {
+/* .grupo_superposicion hr {
     border: none;
     height: 6px;
     background-color: var(--pink);
     margin: 20px 0;
     width: 20%;
-}
+} */
 
 /* Para hacer varias líneas de texto con <span> </span> */
 h1,
@@ -902,10 +901,11 @@ body, html {
     height: 100%;
 }
 
+
+
 .Header {
     display: flex;
     flex-direction: column;
-    /* height: 100%; */
 }
 
 /* animacion Homepage */
@@ -914,12 +914,6 @@ body, html {
 
 
 .Homepage {
-    /* display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-    width: 100%; */
-    /* position: absolute; */
 
     display: flex;
     flex-direction: column;
@@ -939,18 +933,6 @@ body, html {
 
 
 /* Animación de aparición con opacidad y traslación a cada elemento main */
-/* .isUnloaded {
-
-    opacity: 0;
-    transform: translateY(1.25rem);
-    transition: opacity 3s ease-out, transform 3s ease-out;
-}
-.isLoaded {
-
-    opacity: 1;
-    transform: translateY(0);
-} */
-
 
 /* Animación del texto de la Homepage */
 #animatedText {
@@ -999,7 +981,6 @@ body, html {
         width: 120px;
         height: 120px;
     }
-
 
 }
 
