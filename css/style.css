@@ -462,7 +462,7 @@ p {
     display: flex;
     flex-direction: column;
 
-
+    
     .Trabajos-filters {
         display: flex;
         flex-direction: row;
@@ -896,6 +896,82 @@ p {
     flex-direction: column;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+}
+
+/* animacion Homepage */
+
+
+
+
+.Homepage {
+    /* display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%; */
+    /* position: absolute; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Ajuste para hacer que la altura del Homepage sea la máxima posible,
+    sin sumar el tamaño del font size delletrero */
+    min-height: calc(100vh - 2rem);
+    /* FIX  en el mediaquery para desktop:
+    .Homepage {
+        min-height: calc(100vh - 3rem);
+    }
+     */
+
+    position: relative;
+}
+
+
+/* Animación de aparición con opacidad y traslación a cada elemento main */
+/* .isUnloaded {
+
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: opacity 3s ease-out, transform 3s ease-out;
+}
+.isLoaded {
+
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+
+/* Animación del texto de la Homepage */
+#animatedText {
+    position: absolute;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3rem;
+    white-space: nowrap;
+    opacity: 1;
+    transition: transform 2s ease-in;
+    animation: fadeInDown 3.5s forwards; 
+}
+/* Opacidad de 0% a 100% aplicada en la propiedad animation de #animatedText */
+
+
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50%); }
+    100% { opacity: 1; transform: translateY(0)}
+  }
+
+
+
 
 
 
@@ -926,7 +1002,6 @@ p {
 
 
 }
-
 
 
 

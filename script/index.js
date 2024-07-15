@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
         headerNav.classList.toggle('isHidden');
     });
 
-    // Gelería de proyectos con filtros
+  
+
+
+    // Galería de proyectos con filtros
     const trabajosFilterAll = document.querySelector('.Trabajos-filter--all');
     const trabajoPreviews = document.querySelectorAll('.Trabajo-preview');
 
@@ -58,6 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+
 });
 
 
