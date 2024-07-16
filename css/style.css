@@ -230,6 +230,13 @@ p {
     background-color: var(--white);
 }
 
+
+@keyframes moreOpacity {
+    0% { opacity: 0;  }
+    100% { opacity: 1;}
+  }
+
+
 /* Estilos para la pagina Sobre mí ______________________________________________*/
 .pagina-sobre-mi {
     display: flex;
@@ -249,6 +256,7 @@ p {
         text-align: center;
         background-color: var(--white);
         padding: 0.5rem;
+        
 
     }
 
@@ -300,6 +308,8 @@ p {
         /* Resta el padding horizontal */
         height: calc(100vh - 4rem);
         /* Resta el padding vertical */
+
+        
     }
 
 
@@ -320,6 +330,8 @@ p {
         height: calc(100vh - 5rem);
         /* Ancho y alto totales de la pantalla, menos los margenes */
 
+        
+
     }
 
     .Graph-top,
@@ -331,6 +343,8 @@ p {
         height: 50%;
         /* Ambas mitades suman el 100% vertical */
         position: relative;
+
+        
     }
 
     .Graph-topLeft,
@@ -342,6 +356,7 @@ p {
         height: 100%;
         /* Ocupa la altura completa del gráfico */
         position: relative;
+        
     }
 
 
@@ -364,24 +379,12 @@ p {
         background-position: center;
         /* transition: transform 2s ease-in; */
 
-    }
-
-    .ascii {
-
-
-        opacity: 1;
-        transition: transform 2s ease-in;
-        animation: moreOpacity 3.5s forwards; ;
 
 
     }
 
-    @keyframes moreOpacity {
-        0% { opacity: 0; }
-        100% { opacity: 1;}
-      }
 
-    
+
 
 
     /* Estilo de los textos de los puntos del gráfico */
@@ -392,9 +395,12 @@ p {
         padding: rem;
         font-size: var(--tamano-parrafo);
         /* border-radius: 0.5rem; */
+        animation: moreOpacity 3s forwards; 
+
 
         
     }
+
 
 
     /* Colocación de los puntos según el sector
@@ -407,14 +413,19 @@ p {
     .topLeft {
         left: 15%;
         top: 15%;
-        width: 100px;
-        height: 100px;
+        /* width: 100px;
+        height: 100px; */
 
         /* imagen ASCII ilustrativa */
         background-image: url(/img/ojo1_ascii-modified.png);
-
+        
 
     }
+
+
+
+
+
     .topRight {
         right: 10%;
         top: 25%;
@@ -436,8 +447,10 @@ p {
 
     .ascii {
         /* tamaño de las imágenes ASCII */
-        width: 100px;
-        height: 100px;
+
+        width: clamp(100px, 20vw, 220px);
+        height: clamp(100px, 20vh, 300px);
+        
     }
 
     /* SECTORES del gráfico, sus bordes negros
@@ -775,8 +788,6 @@ p {
 
 
 
-
-
 /* Estilos para el FORMULARIO ______________________________________________*/
 .pagina-contacta {
     padding: 1.5rem;
@@ -862,9 +873,7 @@ p {
 /* AJUSTES GENERALES ______________________________________________ */
 
 
-
-
-.fondo {
+/* .fondo {
     position: absolute;
     top: 0;
     left: 0;
@@ -872,9 +881,7 @@ p {
     height: 100%;
     width: auto;
 
-}
-
-
+} */
 
 
 /* línea / filete de color magenta */
@@ -940,8 +947,7 @@ body, html {
     font-family: 'Pinyon Script', cursive;
     font-size: 3rem;
     white-space: nowrap;
-    opacity: 1;
-    transition: transform 2s ease-in;
+    /* opacity: 1; */
     animation: fadeInDown 3.5s forwards; 
 }
 /* Opacidad de 0% a 100% aplicada en la propiedad animation de #animatedText */
@@ -962,7 +968,11 @@ body, html {
  _____ MEDIA QUERY PARA DESKTOP _______________
  ______________________________________________*/
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) { */
+
+/* @media (min-width: 768px) { */
+
+    @media  screen  (min-width: 769px) {
 
     .Footer {
         display: flex;
@@ -975,12 +985,19 @@ body, html {
 
     }
 
-
-
     .point {
         width: 120px;
         height: 120px;
     }
+
+
+    .ascii {
+        /* tamaño de las imágenes ASCII */
+        /* width: 200px;
+        height: 200px; */
+        
+    }
+
 
 }
 
