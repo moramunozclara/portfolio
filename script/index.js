@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     headerBtn.addEventListener('click', function () {
         headerNav.classList.toggle('isActive');
-        headerNav.classList.toggle('isHidden');
+        headerBtn.classList.toggle('isActive');
+
+        // headerNav.classList.toggle('isHidden');
     });
 
   

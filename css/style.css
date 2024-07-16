@@ -493,6 +493,15 @@ p {
     display: flex;
     flex-direction: column;
 
+    /* CAMBIOS 16 JULIO */
+    /* flex: 1; */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+
+
+
+
     
     .Trabajos-filters {
         display: flex;
@@ -649,16 +658,15 @@ p {
     flex-direction: column;
     height: auto;
     width: 100%;
-
-    z-index: 1000;
     top: 0;
     left: 0;
-
     /* margin: 0rem 0rem 2rem 0rem; */
     padding: 0.3rem 0rem;
-
-
     background-color: var(--pink);
+    z-index: 1000;
+
+    align-items: center;
+
 
     /* Estilos para la imagen de fondo */
     .Header-picture--fondo {}
@@ -677,10 +685,6 @@ p {
         list-style: none;
         height: 100%;
         justify-content: center;
-
-
-
-
     }
 
     .Header-li {
@@ -698,22 +702,13 @@ p {
         font-weight: 400;
         font-style: normal;
 
-
         font-size: var(--tamano-links-menu-movil);
-
-
     }
 
     .Header-menuButton {}
-
-    .Header-grupoSuperposicion {}
-
     .Header-title {}
-
     .Header-span {}
-
     .Header-divider {}
-
     .Header-descriptionBox {}
 
     .Header-descriptionText {
@@ -722,8 +717,7 @@ p {
 
     .Header-btn {
         display: block;
-
-
+        z-index: 1000;
     }
 
     .Header-svg {
@@ -731,41 +725,41 @@ p {
         height: 2em;
     }
 
-    .Header-nav {
-        height: 100vh;
-        width: 100%;
-
-        display: flex;
-
-        flex-direction: column;
-        /* justify-content:space-between; */
-        background-color: var(--pink);
-    }
 
     /* MENÚ TOGGLE: Animación de apertura y cierre
         > el menú baja (con transición suave)
         > los links van del 0% al 100% de opacidad (con transición suave)
     */
 
+
     .Header-nav {
         height: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;    
+        /* justify-content:space-between; */
+        background-color: var(--pink);
+
         overflow: hidden;
-        transition: height 1s ease;
+        transition: height 1s ease;  
+
     }
 
     .Header-nav::before,
     .Header-nav::after {
         content: '';
-        display: block;
+        display: flex;
         height: 0;
-        transition: height 0.5s ease;
-        /* Agrega una transición suave a la altura del pseudo-elemento */
     }
 
     .Header-nav.isActive {
         height: 100vh;
-        /* Establece la altura del menú a "auto" para mostrarlo */
-
+        z-index: 999;
+        /* Se coloca sobre todo el contenido del main, 
+        para que éste no se desplace abajo */
+    }
+    .isActive {
+        position: fixed;
     }
 
     .Header-nav .Header-a {
@@ -779,7 +773,6 @@ p {
         opacity: 1;
         /* Opacidad cuando el menú está activo */
     }
-
 
 
 }
@@ -844,6 +837,18 @@ p {
 
     padding: 1.5rem;
 
+    /* CAMBIOS 16 JUIO */
+    /* position: absolute; */
+    /* left: 0;  */
+    /* bottom: 0;  */
+    /* width: 100%; */
+    margin-top: auto; /* para empujar el footer hacia abajo */
+
+
+
+
+
+
     .Footer-ul {
         margin: 1.5rem;
         display: flex;
@@ -871,6 +876,11 @@ p {
 
 
 /* AJUSTES GENERALES ______________________________________________ */
+
+.no-scroll {
+    overflow: hidden;
+}
+
 
 
 /* .fondo {
@@ -902,22 +912,27 @@ p {
     flex-direction: column;
 }
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-
+/* CAMBIOS 16 JULIO */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .Header {
     display: flex;
     flex-direction: column;
 }
 
+
+
 /* animacion Homepage */
-
-
 
 
 .Homepage {
