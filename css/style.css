@@ -651,6 +651,8 @@ p {
     display: flex;
     flex-direction: column;
     margin: 0 0 5rem;
+
+    
     padding: 1.5rem;
 
     /* CAMBIOS 16 JULIO */
@@ -662,45 +664,69 @@ p {
 }
 
 .Curriculum-card {
+    align-self: center;
+    margin-top: 1.5rem;
     display: flex;
-    background-color: #9de456;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+
+    /* background-color: #9de456; */
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    width: 100%; 
-    max-width: 800px; 
+    width: 70vw; 
+    /* max-width: 70vw;  */
 
-
-    justify-content: space-evenly;
+    height: 80vh;
+    /* height: 80vh  */
 
 
     .Curriculum-myName {
-        margin-bottom: 10px;
+        margin-bottom: 0.5rem;
     }
 
     .Curriculum-photo {
         background-color: fuchsia;
 
-                display: flex;
+        display: flex;
         justify-content: center;
         align-items: center;
+
+        height: 100%; 
+
+
     }
 
     .Curriculum-photo-img {
-        height: 50%;
-        width: auto;
-        /* object-fit: cover; */
-        border-right: 2px solid #ccc;
+  /* poner width 80% para obtener una imagen más pequeña; */
+        min-width: 0%;
+        max-width: 80%;
+        height: auto;
+        
+  /* poner width auto para obtener una imagen full tamaño; */
+        /* width: auto; */
+    
+        max-height: 100%;
     }
 
     .Curriculum-resume {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
         /* flex: 2; */
-        padding: 20px;
+        padding:1rem 2rem 12rem;
         background-color: rgb(238, 150, 44);
+        /* height: auto; */
+        /* text-align: center; */
+    
     }
 
     .Curriculum-resumeTitles {
-        margin-top: 20px;
+        margin-top: 1.25rem;
         margin-bottom: 10px;
     }
 
@@ -708,7 +734,7 @@ p {
 
     .Curriculum-ul {
         list-style-type: disc;
-        padding-left: 20px;
+        padding-left: 1.25rem;
     }
     .Curriculum-li {}
 
