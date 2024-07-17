@@ -644,13 +644,66 @@ p {
 
 
 
+}
+
+/* Estilos para la pagina Currículum ____________________________________________*/
+
+.Curriculum {
+
+    display: flex;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+
+    .Curriculum-myName {
+        margin-bottom: 10px;
+
+    }
 
 
+    .Curriculum-photoCard {
+
+        flex: 1;
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Curriculum-photoCard-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-right: 2px solid #ccc;
+    }
+
+    .Curriculum-resume {
+        flex: 2;
+        padding: 20px;
+    }
 
 
+    .Curriculum-resumeTitles {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
 
+    .Curriculum-p {}
+
+
+    .Curriculum-ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    .Curriculum-li {}
 
 }
+
+
+
+
 
 /* Estilos para el bloque Header ______________________________________________*/
 .Header {
