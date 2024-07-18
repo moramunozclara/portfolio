@@ -65,7 +65,81 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+
+    // SLIDER IMAGENES
+    // 1. Constantes y variables
+
+    // Slider
+    const sliderImages = document.querySelector('.TrabajoIndividual-sliderImages');
+    const images = document.querySelectorAll('.TrabajoIndividual-sliderImages img');
+
+    // Botones
+    const btnPrev = document.querySelector('.btnPrev');
+    const btnNext = document.querySelector('.btnNext');
+
+    // Contador
+    const spanActual = document.getElementById('txtActual');
+    const spanTotal = document.getElementById('txtTotal');
+
+    let currentImageIndex = 0;
+    const totalImages = images.length;
+
+    // Actualiza el contador total de imágenes
+    spanTotal.textContent = totalImages;
+
+    // Event listeners
+    btnNext.addEventListener('click', nextImage);
+    btnPrev.addEventListener('click', prevImage);
+
+    // Funciones
+    function nextImage() {
+        currentImageIndex++;
+        if (currentImageIndex >= totalImages) {
+            currentImageIndex = 0;
+        }
+        actualizarSlider();
+        actualizarContador();
+    }
+
+    function prevImage() {
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+            currentImageIndex = totalImages - 1;
+        }
+        actualizarSlider();
+        actualizarContador();
+    }
+
+    function actualizarSlider() {
+        const width = 400; // Establece el ancho del slider a 400px
+        sliderImages.style.transform = `translateX(${-width * currentImageIndex}px)`;
+    }
+
+    function actualizarContador() {
+        spanActual.textContent = currentImageIndex + 1;
+    }
+
+    // Iniciar el contador
+    actualizarContador();
+
+    // Crear intervalos
+    let intervalos;
+
+    function agregarIntervalo() {
+        intervalos = setInterval(nextImage, 3000);
+    }
+
+    agregarIntervalo();
+
+    sliderImages.addEventListener("mouseover", () => {
+        clearInterval(intervalos);
+    });
+
+    sliderImages.addEventListener("mouseout", () => {
+        agregarIntervalo();
+    });
 });
+
 
 
 

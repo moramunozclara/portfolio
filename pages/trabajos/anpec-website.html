@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clara Mora: Trabajos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
-    <script type="text/javascript" defer src="../script/index.js"></script>
+    <script type="text/javascript" defer src="/script/index.js"></script>
 </head>
 <body>
     <header class="Header">
@@ -33,53 +33,49 @@
         </nav>
     </header>
 
-    <main class="pagina-trabajos isUnloaded">
-      <h1 class="Main-title">Trabajos</h1>
+    <main class="pagina-trabajo-individual ">
+      <!-- <h1 class="Main-title">A N P E C Website</h1> -->
 
+      <section class="TrabajoIndividual">
+        <div class="TrabajoIndividual-contenido">
+            <h2 class="TrabajoIndividual-titulo">A N P E C website</h2>
+            <p class="TrabajoIndividual-descripcion">Pequeña descripción del proyecto.</p>
+              <h3>Aptitudes implicadas en el proyecto</h3>
+              
+              <div class="TrabajoIndividual-etiquetas">
 
-
-
-      <section class="Trabajos">
-        <div class="Trabajos-filters">
-          <button class="Trabajos-button Trabajos-filter Trabajos-filter--all"><p class="Trabajos-buttonText">Todos</p></button>
-          <button class="Trabajos-button Trabajos-filter Trabajos-filter--uxui"><p class="Trabajos-buttonText">UX/UI</p></button>
-          <button class="Trabajos-button Trabajos-filter Trabajos-filter--grafico"><p class="Trabajos-buttonText">Diseño Gráfico</p></button>
-          <button class="Trabajos-button Trabajos-filter Trabajos-filter--3d"><p class="Trabajos-buttonText">Diseño 3D</p></button>
-        </div>
-  
-        <div class="Trabajos-grid">
-
-          <!-- Trabajos UX/UI -->
-
-          <!-- 1º: anchor con clases y  div dentro -->
-          <a class="Trabajo-preview Trabajo-uxui Trabajo-uxui--1" href="./trabajos/anpec-website.html" title="Anpec Website1">
-            <div >
-              ANPEC website1
+                <span class="TrabajoIndividual-tag">Diseño web</span>
+                <span class="TrabajoIndividual-tag">Figma</span>
+                <span class="TrabajoIndividual-tag">InDesign</span>
             </div>
-          </a>
-
-          <a class="Trabajo-preview Trabajo-uxui Trabajo-uxui--2"  href="./trabajos/anpec-website.html" title="MindBloom app"><div>MindBloom app</div></a>
-          <a class="Trabajo-preview Trabajo-uxui Trabajo-uxui--3"  href="./trabajos/anpec-website.html" title="Glint$hop concept"><div>Glint$hop concept</div></a>
-          
-          <!-- Trabajos de Diseño Gráfico -->
-          <a class="Trabajo-preview Trabajo-grafico Trabajo-grafico--1"  href="./trabajos/anpec-website.html" title="Editorial"><div>Editorial</div></a>
-          <a class="Trabajo-preview Trabajo-grafico Trabajo-grafico--2"  href="./trabajos/anpec-website.html" title="Serenates"><div>Serenates</div></a>
-          <a class="Trabajo-preview Trabajo-grafico Trabajo-grafico--3"  href="./trabajos/anpec-website.html" title="Casa Museu Benlliure"><div>Casa Museu Benlliure</div></a>
-
-          <!-- Trabajos de Modelado 3D -->
-          <a class="Trabajo-preview Trabajo-3d Trabajo-3d--1"  href="./trabajos/anpec-website.html" title="Calzado"><div>Calzado</div></a>
-          <a class="Trabajo-preview Trabajo-3d Trabajo-3d--2"  href="./trabajos/anpec-website.html" title="Escenario"><div>Escenario</div></a>
-          <a class="Trabajo-preview Trabajo-3d Trabajo-3d--3"  href="./trabajos/anpec-website.html" title="Mobiliario"><div>Mobiliario</div></a>
         </div>
 
+        <div class="TrabajoIndividual-carrusel">
+
+            <div class="TrabajoIndividual-sliderImages">
+
+                <img src="https://picsum.photos/id/236/200/300" alt="Imagen trabajo">
+                <img src="https://picsum.photos/id/237/200/300" alt="Imagen trabajo">
+                <img src="https://picsum.photos/id/235/200/300" alt="Imagen trabajo">
+                <img src="https://picsum.photos/id/234/200/300" alt="Imagen trabajo">
+
+            </div>
+
+            <button class="btnPrev">Anterior</button>
+            <button class="btnNext">Siguiente</button>
+
+            <div class="Slider-contador">
+              <span id="txtActual">X</span> / <span id="txtTotal">XX</span>
+            </div>
+
+        </div>
+    </section>
 
 
-      </section>
+      
 
 
     </main>
-
-
 
 
     <footer class="Footer">

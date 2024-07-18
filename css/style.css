@@ -501,7 +501,6 @@ p {
 
 
 
-
     
     .Trabajos-filters {
         display: flex;
@@ -555,6 +554,8 @@ p {
 
 
     .Trabajo-preview {
+        text-decoration: none;
+
         background-color: transparent;
         padding: 1.5rem;
         text-align: center;
@@ -645,6 +646,128 @@ p {
 
 
 }
+
+
+/* Estilos para la pagina INDIVIDUAL de cada trabajo  ______________________________________________*/
+
+.pagina-trabajo-individual {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.TrabajoIndividual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.TrabajoIndividual-contenido {
+    margin-bottom: 20px;
+}
+
+.TrabajoIndividual-titulo {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.TrabajoIndividual-descripcion {
+    margin: 10px 0;
+}
+
+.TrabajoIndividual-etiquetas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.TrabajoIndividual-tag {
+    font-size: var(--tamano-parrafo);
+    color: white;
+    background-color: #37e15f;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.218);
+}
+
+.TrabajoIndividual-carrusel {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+}
+
+.TrabajoIndividual-sliderImages {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.TrabajoIndividual-sliderImages img {
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.btnPrev,
+.btnNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btnPrev {
+    left: 10px;
+}
+
+.btnNext {
+    right: 10px;
+}
+
+.Slider-contador {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* FINAL para la pagina INDIVIDUAL de cada trabajo  ______________________________________________*/
+
+
+.TrabajoIndividual-carrusel {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%; */
+}
+
+/* .TrabajoIndividual-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+} */
+
+.TrabajoIndividual-sliderImages {
+    /* max-height: 70vh; */
+
+    /* width: 400px; */
+}
+
+    /* ESTILO PARA img individual */
+    /* object-fit: contain; */
+
 
 /* Estilos para la pagina Currículum ____________________________________________*/
 .pagina-curriculum {
