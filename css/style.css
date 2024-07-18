@@ -417,7 +417,7 @@ p {
         height: 100px; */
 
         /* imagen ASCII ilustrativa */
-        background-image: url(/img/ojo1_ascii-modified.png);
+        background-image: url(/img/sobre-mi/ojo1_ascii-modified.png);
         
 
     }
@@ -435,7 +435,7 @@ p {
         bottom: 25%;
 
         /* imagen ASCII ilustrativa */
-        background-image: url(/img/lazo_ascii-modified.png);
+        background-image: url(/img/sobre-mi/lazo_ascii-modified.png);
 
 
 
@@ -603,42 +603,42 @@ p {
 
 
     .Trabajo-uxui--1 {
-        background-image: url('../img/ux-ui/anpec/claramora_anpec_2.jpg');
+        background-image: url('../img/trabajos/ux-ui/anpec/claramora_anpec_2.jpg');
     }
 
     .Trabajo-uxui--2 {
-        background-image: url('../img/ux-ui/mindbloom/mindbloom_1.png');
+        background-image: url('../img/trabajos/ux-ui/mindbloom/mindbloom_1.png');
         background-position-y: 10%;
     }
 
     .Trabajo-uxui--3 {
-        background-image: url('../img/ux-ui/glintshop-concept/claramora_glint_shop_concept_1.png');
+        background-image: url('../img/trabajos/ux-ui/glintshop-concept/claramora_glint_shop_concept_1.png');
     }
 
 
     .Trabajo-grafico--1 {
-        background-image: url('../img/graphic-design/editorial/LIBRO_editorial.png');
+        background-image: url('../img/trabajos/graphic-design/editorial/libro_editorial.png');
     }
 
     .Trabajo-grafico--2 {
-        background-image: url('../img/graphic-design/serenates/SERENATES_Cartel.png');
+        background-image: url('../img/trabajos/graphic-design/serenates/serenates_cartel.png');
     }
 
     .Trabajo-grafico--3 {
-        background-image: url('../img/graphic-design/casa_museu_benlliure/benlliure.png');
+        background-image: url('../img/trabajos/graphic-design/casa_museu_benlliure/benlliure.png');
     }
 
 
     .Trabajo-3d--1 {
-        background-image: url('../img/3d/calzado.png');
+        background-image: url('../img/trabajos/3d/calzado.png');
     }
 
     .Trabajo-3d--2 {
-        background-image: url('../img/3d/museo.png');
+        background-image: url('../img/trabajos/3d/museo.png');
     }
 
     .Trabajo-3d--3 {
-        background-image: url('../img/3d/mobiliario.png');
+        background-image: url('../img/trabajos/3d/mobiliario.png');
     }
 
 
@@ -970,12 +970,14 @@ p {
     .Header-nav.isActive {
         height: 100vh;
         z-index: 999;
+
+        position: fixed;
+
+
         /* Se coloca sobre todo el contenido del main, 
         para que éste no se desplace abajo */
     }
-    .isActive {
-        position: fixed;
-    }
+ 
 
     .Header-nav .Header-a {
         opacity: 0;
