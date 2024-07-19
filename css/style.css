@@ -219,40 +219,259 @@ p {
 
 
 
-
-
 /* DISEÑO MOBILE FIRST */
+/* ANIMACIONES empleadas en las páginas _________________________________________*/
 
-/* Animaciones empleadas en la página */
-
-/* Aparición hacia arriba y aumentando opacidad. Empleada en los MAIN */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
+    /* 1. Aparición hacia arriba y aumentando opacidad. 
+            Aplicada a los MAIN */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-    100% {
+
+    /* 2. Aparición solo con aumento de opacidad */
+    @keyframes moreOpacity {
+        0% { opacity: 0;  }
+        100% { opacity: 1;}
+    }
+
+    /* 3. Aparición hacia abajo y aumentando opacidad. 
+            Empleada en el título de la página de Inicio */
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-50%); }
+        100% { opacity: 1; transform: translateY(0)}
+    }
+
+
+
+
+
+/* /////// AJUSTES GENERALES ____________________________________________________*/
+
+.no-scroll {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+    display: flex;
+    flex-direction: column;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* CAMBIOS 16 JULIO */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Estilos para el bloque Header ________________________________________________*/
+.Header {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* margin: 0rem 0rem 2rem 0rem; */
+    padding: 0.3rem 0rem;
+    background-color: var(--pink);
+    z-index: 1000;
+
+    align-items: center;
+
+
+    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
+    /* Estilos para la imagen de fondo */
+    .Header-picture--fondo {}
+    .Header-fondoImg {}
+    /* Estilos para la imagen del logo */
+    .Header-logo {}
+    .Header-logoImg {}
+    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
+
+
+
+    .Header-ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .Header-li {
+        margin: 0px 1rem;
+        text-align: center;
+        margin: 0.5rem;
+    }
+
+    .Header-a {
+        text-decoration: none;
+        color: var(--black);
+        font-family: var(--tipografia-script);
+        font-weight: 400;
+        font-style: normal;
+        font-size: var(--tamano-links-menu-movil);
+    }
+
+    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
+    .Header-menuButton {}
+    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
+
+
+    .Header-descriptionText {
+        font-size: var(--tamano-subtitulo);
+    }
+
+    .Header-btn {
+        display: block;
+        z-index: 1000;
+    }
+
+    .Header-svg {
+        width: 2em;
+        height: 2em;
+    }
+
+    /* MENÚ TOGGLE: Animación de apertura y cierre
+        > el menú baja (con transición suave)
+        > los links van del 0% al 100% de opacidad (con transición suave)
+    */
+
+    .Header-nav {
+        height: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;    
+        /* justify-content:space-between; */
+        background-color: var(--pink);
+        overflow: hidden;
+        transition: height 1s ease;  
+
+    }
+
+    .Header-nav::before,
+    .Header-nav::after {
+        content: '';
+        display: flex;
+        height: 0;
+    }
+
+    .Header-nav.isActive {
+        height: 100vh;
+        z-index: 999;
+        /* Se pone un orden de contenidos muy alto para que ningún
+        elemento creado a posteriori con el mismo ajuste pueda
+        quedar por encima de los contenidos de mi menú abierto */
+        position: fixed;
+        /* Se coloca sobre todo el contenido del main, 
+        para que éste no se desplace abajo */
+    }
+ 
+    .Header-nav .Header-a {
+        opacity: 0;
+        /* Opacidad inicial */
+        transition: opacity 1s ease;
+        /* Transición suave */
+    }
+
+    .Header-nav.isActive .Header-a {
         opacity: 1;
-        transform: translateY(0);
+        /* Opacidad cuando el menú está activo */
+    }
+
+}
+
+
+/* Estilos para el bloque FOOTER / Pie de página _______________________________ */
+.Footer {
+    background-color: var(--pink);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.5rem;
+
+    margin-top: auto; 
+    /* para empujar el footer hacia abajo */
+
+
+    .Footer-ul {
+        margin: 1.5rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Footer-li {
+        list-style: none;
+        margin-bottom: 5px;
+    }
+
+    .Footer-a {
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .Footer-logoImg {
+        height: 50px;
+    }
+
+    .Footer-span {
+        color: var(--black);
     }
 }
 
-/* Aparición solo con aumento de opacidad */
-@keyframes moreOpacity {
-    0% { opacity: 0;  }
-    100% { opacity: 1;}
-  }
 
-  /* Aparición hacia abajo y aumentando opacidad. Empleada en el título de la página de Inicio */
-  @keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-50%); }
-    100% { opacity: 1; transform: translateY(0)}
-  }
-
-/* Animación general para los MAIN ______________________________________________*/
-/* con la carga de cada página  */
+/* Estilos para MAIN: Animación inicial general para todas las páginas  _________*/
 main {
     animation: fadeInUp 1s ease-in-out;
+}
+
+
+/* Estilos para la pagina de INICIO  ____________________________________________*/
+.Homepage {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Ajuste para hacer que la altura del Homepage sea la máxima posible,
+    sin sumar el tamaño del font size del letrero */
+    min-height: calc(100vh - 2rem);
+    /* FIX  en el mediaquery para desktop:
+    .Homepage {
+        min-height: calc(100vh - 3rem);
+    }
+     */
+    position: relative;
+
+    /* Animación del texto de la Homepage */
+    #animatedText {
+        position: absolute;
+        font-family: 'Pinyon Script', cursive;
+        font-size: 3rem;
+        white-space: nowrap;
+        /* opacity: 1; */
+        animation: fadeInDown 3.5s forwards; 
+    }
 }
 
 
@@ -632,45 +851,67 @@ main {
         background-image: url('../img/trabajos/3d/mobiliario.png');
     }
 
-
-
-
-
 }
 
 
-/* Estilos para la pagina INDIVIDUAL de cada trabajo  ______________________________________________*/
+/* Estilos para la pagina de trabajo INDIVIDUAL de cada trabajo  ________________*/
 .pagina-trabajo-individual {
     margin: 0;
     padding: 0;
-    height: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    min-height: 100vh;
+
+    br {
+        display: block;
+        padding: 2rem
+    }
 
     .TrabajoIndividual {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         text-align: center;
+        /* padding: 20px; */
+                /* gap: 1.25rem; */
+         /* Espacio entre descripción y slider */
+         flex-grow: 1; 
     }
     
-    .TrabajoIndividual-contenido {
-        margin-bottom: 20px;
+    .TrabajoIndividual-volver {
+        color: fuchsia;
+        text-decoration: none;
+        align-self: flex-start;
     }
+
+    /* .TrabajoIndividual-contenido {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
+        margin-bottom: 1.25rem;
+    } */
     
     .TrabajoIndividual-titulo {
         font-size: 2rem;
-        margin: 0;
+        margin: 10px 0;
     }
     
     .TrabajoIndividual-descripcion {
         margin: 10px 0;
+        font-size: var(--tamano-parrafo);
     }
-    
+     
+
     .TrabajoIndividual-etiquetas {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
         gap: 10px;
-        align-items: center;
+        justify-content: center;
+        margin: 10px
     }
     
     .TrabajoIndividual-tag {
@@ -683,9 +924,18 @@ main {
     }
     
     .TrabajoIndividual-carrusel {
+        /* flex-grow: 2;
+        flex-shrink: 1;
+        flex-basis: 0%; */
         position: relative;
-        width: 400px;
+        width: 100%;
         overflow: hidden;
+        max-height: 70vh;
+        /* altura máxima del slider */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
     }
     
     .TrabajoIndividual-sliderImages {
@@ -694,7 +944,8 @@ main {
     }
     
     .TrabajoIndividual-sliderImages img {
-        width: 400px;
+        height: 100%;
+        object-fit: cover;
         flex-shrink: 0;
     }
     
@@ -704,6 +955,7 @@ main {
         top: 50%;
         transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 20px;
         color: white;
         border: none;
         padding: 10px;
@@ -725,40 +977,22 @@ main {
     
 }
 
+    /* BORRAR */
+    .TrabajoIndividual-carrusel {
+        /* display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%; */
+    }
 
+    .TrabajoIndividual-sliderImages {
+        /* max-height: 70vh; */
 
-
-
-
-
-
-
-
-
-/* FINAL para la pagina INDIVIDUAL de cada trabajo  ______________________________________________*/
-
-
-.TrabajoIndividual-carrusel {
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%; */
-}
-
-/* .TrabajoIndividual-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-} */
-
-.TrabajoIndividual-sliderImages {
-    /* max-height: 70vh; */
-
-    /* width: 400px; */
-}
-
-    /* ESTILO PARA img individual */
-    /* object-fit: contain; */
+        /* width: 400px; */
+    }
+        /* ESTILO PARA img individual */
+        /* object-fit: contain; */
 
 
 /* Estilos para la pagina Currículum ____________________________________________*/
@@ -766,450 +1000,203 @@ main {
     display: flex;
     flex-direction: column;
     margin: 0 0 5rem;
-
-    
     padding: 1.5rem;
 
     /* CAMBIOS 16 JULIO */
-/*     
+    /*     
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%; */
 
-}
-
-.Curriculum-card {
-    align-self: center;
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
-
-    /* background-color: #9de456; */
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 70vw; 
-    /* max-width: 70vw;  */
-
-    height: 80vh;
-    /* height: 80vh  */
-
-
-    .Curriculum-myName {
-        margin-bottom: 0.5rem;
-    }
-
-    .Curriculum-photo {
-        background-color: fuchsia;
-
+    .Curriculum-card {
+        align-self: center;
+        margin-top: 1.5rem;
         display: flex;
-        justify-content: center;
-        align-items: center;
-
-        height: 100%; 
-
-
-    }
-
-    .Curriculum-photo-img {
-  /* poner width 80% para obtener una imagen más pequeña; */
-        min-width: 0%;
-        max-width: 80%;
-        height: auto;
-        
-  /* poner width auto para obtener una imagen full tamaño; */
-        /* width: auto; */
+        justify-content: space-evenly;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
     
-        max-height: 100%;
-    }
-
-    .Curriculum-resume {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* align-items: center; */
-        /* flex: 2; */
-        padding:1rem 2rem 12rem;
-        background-color: rgb(238, 150, 44);
-        /* height: auto; */
-        /* text-align: center; */
+        /* background-color: #9de456; */
     
-    }
-
-    .Curriculum-resumeTitles {
-        margin-top: 1.25rem;
-        margin-bottom: 10px;
-    }
-
-    .Curriculum-p {}
-
-    .Curriculum-ul {
-        list-style-type: disc;
-        padding-left: 1.25rem;
-    }
-    .Curriculum-li {}
-
-}
-
-
-
-
-
-/* Estilos para el bloque Header ______________________________________________*/
-.Header {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
-    top: 0;
-    left: 0;
-    /* margin: 0rem 0rem 2rem 0rem; */
-    padding: 0.3rem 0rem;
-    background-color: var(--pink);
-    z-index: 1000;
-
-    align-items: center;
-
-
-    /* Estilos para la imagen de fondo */
-    .Header-picture--fondo {}
-
-    .Header-fondoImg {}
-
-    /* Estilos para la imagen del logo */
-    .Header-logo {}
-
-    .Header-logoImg {}
-
-
-    .Header-ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        height: 100%;
-        justify-content: center;
-    }
-
-    .Header-li {
-        margin: 0px 1rem;
-        text-align: center;
-        margin: 0.5rem;
-
-
-    }
-
-    .Header-a {
-        text-decoration: none;
-        color: var(--black);
-        font-family: var(--tipografia-script);
-        font-weight: 400;
-        font-style: normal;
-
-        font-size: var(--tamano-links-menu-movil);
-    }
-
-    .Header-menuButton {}
-    .Header-title {}
-    .Header-span {}
-    .Header-divider {}
-    .Header-descriptionBox {}
-
-    .Header-descriptionText {
-        font-size: var(--tamano-subtitulo);
-    }
-
-    .Header-btn {
-        display: block;
-        z-index: 1000;
-    }
-
-    .Header-svg {
-        width: 2em;
-        height: 2em;
-    }
-
-
-    /* MENÚ TOGGLE: Animación de apertura y cierre
-        > el menú baja (con transición suave)
-        > los links van del 0% al 100% de opacidad (con transición suave)
-    */
-
-
-    .Header-nav {
-        height: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;    
-        /* justify-content:space-between; */
-        background-color: var(--pink);
-
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
         overflow: hidden;
-        transition: height 1s ease;  
-
+        width: 70vw; 
+        /* max-width: 70vw;  */
+    
+        height: 80vh;
+        /* height: 80vh  */
+    
+    
+        .Curriculum-myName {
+            margin-bottom: 0.5rem;
+        }
+    
+        .Curriculum-photo {
+            background-color: fuchsia;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            height: 100%; 
+    
+        }
+    
+        .Curriculum-photo-img {
+            /* poner width 80% para obtener una imagen más pequeña; */
+            min-width: 0%;
+            max-width: 80%;
+            height: auto;
+            
+        /* poner width auto para obtener una imagen full tamaño; */
+            /* width: auto; */
+        
+            max-height: 100%;
+        }
+    
+        .Curriculum-resume {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            /* flex: 2; */
+            padding:1rem 2rem 12rem;
+            background-color: rgb(238, 150, 44);
+            /* height: auto; */
+            /* text-align: center; */
+        
+        }
+    
+        .Curriculum-resumeTitles {
+            margin-top: 1.25rem;
+            margin-bottom: 10px;
+        }
+    
+        .Curriculum-p {}
+    
+        .Curriculum-ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+        }
+        .Curriculum-li {}
+    
     }
-
-    .Header-nav::before,
-    .Header-nav::after {
-        content: '';
-        display: flex;
-        height: 0;
-    }
-
-    .Header-nav.isActive {
-        height: 100vh;
-        z-index: 999;
-
-        position: fixed;
-
-
-        /* Se coloca sobre todo el contenido del main, 
-        para que éste no se desplace abajo */
-    }
- 
-
-    .Header-nav .Header-a {
-        opacity: 0;
-        /* Opacidad inicial */
-        transition: opacity 1s ease;
-        /* Transición suave */
-    }
-
-    .Header-nav.isActive .Header-a {
-        opacity: 1;
-        /* Opacidad cuando el menú está activo */
-    }
-
-
 }
 
 
 
-
-
-/* Estilos para el FORMULARIO ______________________________________________*/
+/* Estilos para la pagina Contacta: FORMULARIO __________________________________*/
 .pagina-contacta {
     padding: 1.5rem;
-}
 
-.Formulario {
-    padding: 2rem;
-    margin: 2rem;
-
-    display: flex;
-    flex-direction: column;
-
-    .Formulario-Form {
+    .Formulario {
+        padding: 2rem;
+        margin: 2rem;
+    
         display: flex;
         flex-direction: column;
-    }
+    
+        .Formulario-Form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .Formulario-input {
+            margin: 2rem;
+            padding: 1rem;
+    
+        }
+    
+        .Formulario-select {
+            margin: 2rem;
+            padding: 1rem;
+    
+        }
+    
+        .Formulario-button {
+            padding: 1rem;
+            border: 1px solid var(--black);
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    
+        .Formulario-button:hover {
+            color: var(--white);
+            background-color: var(--pink);
+        }
 
-    .Formulario-input {
-        margin: 2rem;
-        padding: 1rem;
-
-    }
-
-    .Formulario-select {
-        margin: 2rem;
-        padding: 1rem;
-
-    }
-
-    .Formulario-button {
-        padding: 1rem;
-        border: 1px solid var(--black);
-        font-size: 1rem;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .Formulario-button:hover {
-        color: var(--white);
-        background-color: var(--pink);
-    }
-
-
-}
-
-
-/* Estilos para el bloque FOOTER ______________________________________________ */
-.Footer {
-    background-color: var(--pink);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 1.5rem;
-
-    /* CAMBIOS 16 JUIO */
-    /* position: absolute; */
-    /* left: 0;  */
-    /* bottom: 0;  */
-    /* width: 100%; */
-    margin-top: auto; /* para empujar el footer hacia abajo */
-
-
-
-
-
-
-    .Footer-ul {
-        margin: 1.5rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .Footer-li {
-        list-style: none;
-        margin-bottom: 5px;
-    }
-
-    .Footer-a {
-        text-decoration: none;
-        color: var(--black);
-    }
-
-    .Footer-logoImg {
-        height: 50px;
-    }
-
-    .Footer-span {
-        color: var(--black);
     }
 }
 
 
-/* AJUSTES GENERALES ______________________________________________ */
-
-.no-scroll {
-    overflow: hidden;
-}
 
 
 
-/* .fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: none;
-    height: 100%;
-    width: auto;
+/* _____________________________________________________________
+ _____ __________MEDIA QUERY PARA DESKTOP_______________________
+ ______ Adaptaciones para tamaños de pantalla más anchos_______*/
 
-} */
-
-
-/* línea / filete de color magenta */
-/* .grupo_superposicion hr {
-    border: none;
-    height: 6px;
-    background-color: var(--pink);
-    margin: 20px 0;
-    width: 20%;
-} */
-
-/* Para hacer varias líneas de texto con <span> </span> */
-h1,
-h2,
-h3,
-p {
-    display: flex;
-    flex-direction: column;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-/* CAMBIOS 16 JULIO */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.Header {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-/* animacion Homepage */
-
-
-.Homepage {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Ajuste para hacer que la altura del Homepage sea la máxima posible,
-    sin sumar el tamaño del font size delletrero */
-    min-height: calc(100vh - 2rem);
-    /* FIX  en el mediaquery para desktop:
-    .Homepage {
-        min-height: calc(100vh - 3rem);
-    }
-     */
-
-    position: relative;
-}
-
-
-/* Animación de aparición con opacidad y traslación a cada elemento main */
-
-/* Animación del texto de la Homepage */
-#animatedText {
-    position: absolute;
-    font-family: 'Pinyon Script', cursive;
-    font-size: 3rem;
-    white-space: nowrap;
-    /* opacity: 1; */
-    animation: fadeInDown 3.5s forwards; 
-}
-/* Opacidad de 0% a 100% aplicada en la propiedad animation de #animatedText */
-
-
-
-
-
-
-
-
-
-/* ____________________________________________
- _____ MEDIA QUERY PARA DESKTOP _______________
- ______________________________________________*/
-
-/* @media screen and (min-width: 768px) { */
-
-/* @media (min-width: 768px) { */
-
-/* MEDIA QUERY PARA DESKTOP */
 @media (min-width: 768px) {
+
+    /* Adaptación Pie de página  */
     .Footer {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
+        background-color: var(--pink);
+        margin-top: auto;
+
+        .Footer-ul {
+            align-items: flex-start;
+        }
     }
 
-    .Footer-ul {
-        align-items: flex-start;
-    }
-
-
+    /* Adaptación Trabajos  */
     .pagina-trabajos {
         .Trabajos-grid {
             grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas más grandes */
         }
+    }
+
+    /* Adaptación Trabajos individuales con slider */
+    .pagina-trabajo-individual {
+
+        .TrabajoIndividual {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    
+        .TrabajoIndividual-contenido {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 50%;
+            text-align: left;
+        }
+    
+        .TrabajoIndividual-carrusel {
+            flex-grow: 2;
+            flex-shrink: 1;
+            flex-basis: 50%;
+        }
+    
+        .TrabajoIndividual-volver {
+            align-self: flex-start;
+        }
+    
+        .TrabajoIndividual-titulo,
+        .TrabajoIndividual-descripcion {
+            text-align: left;
+        }
+    
+        .TrabajoIndividual-etiquetas {
+            justify-content: flex-start;
+        }
+        
     }
 }
 
