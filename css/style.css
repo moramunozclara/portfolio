@@ -979,11 +979,11 @@ main {
         overflow: visible;
         gap: 2rem;
     
-    
         .Curriculum-myName {
             margin-bottom: 0.5rem;
         }
     
+        /* "POLAROID con mi foto */
         .Curriculum-photo {
             display: flex;
             flex-direction: column;
@@ -993,15 +993,11 @@ main {
 
             background-color: var(--cream);
             height: 100%; 
-                        /* poner width 80% para obtener una imagen más pequeña; */
             max-width: 50%;
             box-shadow: 0 4px 8px var(--transparent-light-grey);
             border-radius: 0.4rem;
-            /* height: 100%; */
             height: auto;
-
             animation: rotationCardThreeD 2s forwards; 
-
 
         }
     
@@ -1015,6 +1011,7 @@ main {
             padding-bottom: 2rem;
             align-self: flex-end;        }
     
+        /* DESCRIPCIÓN DE MI CURRÍCULUM */
         .Curriculum-resume {
             display: flex;
             flex-direction: column;
@@ -1030,6 +1027,7 @@ main {
         
         }
     
+        /* TÍTULOS DEL CURRICULUM */
         .Curriculum-resumeTitles {
             margin-top: 1.25rem;
             margin-bottom: 0.625rem;
@@ -1146,7 +1144,7 @@ main {
 
     }
 
-    /* Adaptación Currículim */
+    /* Adaptación Currículum */
     .pagina-curriculum {
         flex-grow: 1;
         flex-shrink: 1;
