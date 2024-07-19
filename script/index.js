@@ -73,14 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('.TrabajoIndividual-sliderImages img');
     const btnPrev = document.querySelector('.btnPrev');
     const btnNext = document.querySelector('.btnNext');
-    const spanActual = document.getElementById('txtActual');
-    const spanTotal = document.getElementById('txtTotal');
-
-    if (sliderImages && btnPrev && btnNext && spanActual && spanTotal) {
+   
+    if (sliderImages && btnPrev && btnNext ) {
         let currentImageIndex = 0;
         const totalImages = images.length;
 
-        spanTotal.textContent = totalImages;
 
         btnNext.addEventListener('click', nextImage);
         btnPrev.addEventListener('click', prevImage);
@@ -91,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentImageIndex = 0;
             }
             actualizarSlider();
-            actualizarContador();
         }
 
         function prevImage() {
@@ -100,7 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentImageIndex = totalImages - 1;
             }
             actualizarSlider();
-            actualizarContador();
         }
 
         function actualizarSlider() {
@@ -108,10 +103,5 @@ document.addEventListener('DOMContentLoaded', function () {
             sliderImages.style.transform = `translateX(${-width * currentImageIndex}px)`;
         }
 
-        function actualizarContador() {
-            spanActual.textContent = currentImageIndex + 1;
-        }
-
-        actualizarContador();
     }
 });

@@ -420,6 +420,7 @@ body {
     .Footer-a {
         text-decoration: none;
         color: var(--black);
+        font-size: var(--tamano-button-text);
     }
 
     .Footer-logoImg {
@@ -843,7 +844,6 @@ main {
     flex-direction: column;
     flex-grow: 1;
 
-
     br {
         display: block;
         padding: 2rem
@@ -851,6 +851,7 @@ main {
         
     .TrabajoIndividual-volver {
         color:var(--black);
+        font-size: var(--tamano-button-text);
         text-decoration:underline;
         align-self: flex-start;
     }
@@ -881,6 +882,7 @@ main {
     .TrabajoIndividual-titulo {
         font-size: 2rem;
         margin: 10px 0;
+        font-family:var(--tipografia-sansserif) ;
     }
 
 
@@ -934,8 +936,9 @@ main {
         top: 50%;
         transform: translateY(-50%);
         background-color: var(--transparent-dark-grey);
+        font-size: var(--tamano-button-text);
         border-radius: 20px;
-        color: white;
+        color: var(--white);
         border: none;
         padding: 10px;
         cursor: pointer;
@@ -948,11 +951,6 @@ main {
     .btnNext {
         right: 10px;
     }
-    
-    .Slider-contador {
-        text-align: center;
-        margin-top: 10px;
-    } 
     
 }
 
@@ -1095,8 +1093,6 @@ main {
 
 
 
-
-
 /* _____________________________________________________________
  _____ __________MEDIA QUERY PARA DESKTOP_______________________
  ______ Adaptaciones para tamaños de pantalla más anchos_______*/
@@ -1127,25 +1123,7 @@ main {
     /* Adaptación Trabajos individuales con slider */
     .pagina-trabajo-individual {
 
-        .TrabajoIndividual {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-    
-        .TrabajoIndividual-contenido {
-            flex-grow: 1;
-            flex-shrink: 1;
-            flex-basis: 50%;
-            text-align: left;
-        }
-    
-        .TrabajoIndividual-carrusel {
-            flex-grow: 2;
-            flex-shrink: 1;
-            flex-basis: 50%;
-        }
-    
+
         .TrabajoIndividual-volver {
             align-self: flex-start;
         }
@@ -1153,10 +1131,12 @@ main {
         .TrabajoIndividual-titulo,
         .TrabajoIndividual-descripcion {
             text-align: left;
+            max-width: 65%;        
         }
     
         .TrabajoIndividual-etiquetas {
             justify-content: flex-start;
+
         }
         
     }
@@ -1172,20 +1152,18 @@ main {
             gap:3rem ;
             overflow: visible;
 
-
-
             .Curriculum-photo {
                 padding:2rem;
-                
-                /* max-height: 70vh; */
-
 
                 .Curriculum-photo-img {
 
                     max-height: 70vh;
-                    /* align-items: center; */
+                }
+
             }
-    }
+
+        }
+
     }
 
 }
