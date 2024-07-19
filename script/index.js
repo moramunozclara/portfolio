@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const trabajosFilterAll = document.querySelector('.Trabajos-filter--all');
     const trabajosFilterUxui = document.querySelector('.Trabajos-filter--uxui');
     const trabajosFilterGrafico = document.querySelector('.Trabajos-filter--grafico');
-    const trabajosFilter3d = document.querySelector('.Trabajos-filter--3d');
+    const trabajosFilterThreeD = document.querySelector('.Trabajos-filter--threeD');
     const trabajoPreviews = document.querySelectorAll('.Trabajo-preview');
 
     if (trabajosFilterAll) {
@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    if (trabajosFilter3d) {
-        trabajosFilter3d.addEventListener('click', function() {
+    if (trabajosFilterThreeD) {
+        trabajosFilterThreeD.addEventListener('click', function() {
             trabajoPreviews.forEach(function (preview) {
-                if (preview.classList.contains('Trabajo-3d')) {
+                if (preview.classList.contains('Trabajo-threeD')) {
                     preview.classList.add('isActive');
                     preview.classList.remove('isHidden');
                 } else {

@@ -1,114 +1,113 @@
 /* CSS RESET ⬇⬇⬇⬇⬇  */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    /* Set the sizing of an element to include it's border */
-}
-
-* {
-    margin: 0;
-    /* Set the default margin to 0 */
-    padding: 0;
-    /* Set the default padding to 0 */
-}
-
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
-    /* Turn off numbered and unordered list decoration */
-}
-
-html:focus-within {
-    scroll-behavior: smooth;
-    /* Make the scrolling inside of any scrollable element smooth */
-}
-
-a:not([class]) {
-    text-decoration-skip-ink: auto;
-    /* Makes link undelines look better */
-}
-
-img,
-picture,
-svg,
-video,
-canvas {
-    max-width: 100%;
-    /* Makes it responsive */
-    height: auto;
-    /* Makes it responsive */
-    vertical-align: middle;
-    /* Makes text next to inline images look better */
-    font-style: italic;
-    /* If the images don't load it makes the alt decription look better */
-    background-repeat: no-repeat;
-    /* The background repeat and size are there if you want to load a picture first like a backroung image that is worse quality while the better quality image loads */
-    background-size: cover;
-}
-
-input,
-button,
-textarea,
-select {
-    font: inherit;
-    /* Makes these elements inherit fonts */
-}
-
-button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-
-    background: transparent;
-
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-}
-
-/* Remove excess padding and border in Firefox 4+ */
-&::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-
-/* Turns off animation for people who don't want to see them */
-@media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto;
-    }
-
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-        transition: none;
+        box-sizing: border-box;
+        /* Set the sizing of an element to include it's border */
     }
-}
 
-body,
-html {
-    height: 100%;
-    /* Makes the body element full screen */
-    scroll-behavior: smooth;
-    /* Makes normal scrolling smooth */
-}
+    * {
+        margin: 0;
+        /* Set the default margin to 0 */
+        padding: 0;
+        /* Set the default padding to 0 */
+    }
+
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+        /* Turn off numbered and unordered list decoration */
+    }
+
+    html:focus-within {
+        scroll-behavior: smooth;
+        /* Make the scrolling inside of any scrollable element smooth */
+    }
+
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+        /* Makes link undelines look better */
+    }
+
+    img,
+    picture,
+    svg,
+    video,
+    canvas {
+        max-width: 100%;
+        /* Makes it responsive */
+        height: auto;
+        /* Makes it responsive */
+        vertical-align: middle;
+        /* Makes text next to inline images look better */
+        font-style: italic;
+        /* If the images don't load it makes the alt decription look better */
+        background-repeat: no-repeat;
+        /* The background repeat and size are there if you want to load a picture first like a backroung image that is worse quality while the better quality image loads */
+        background-size: cover;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+        /* Makes these elements inherit fonts */
+    }
+
+    button {
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        overflow: visible;
+        background: transparent;
+
+        /* inherit font & color from ancestor */
+        color: inherit;
+        font: inherit;
+
+        /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+        line-height: normal;
+
+        /* Corrects font smoothing for webkit */
+        -webkit-font-smoothing: inherit;
+        -moz-osx-font-smoothing: inherit;
+
+        /* Corrects inability to style clickable `input` types in iOS */
+        -webkit-appearance: none;
+    }
+
+    /* Remove excess padding and border in Firefox 4+ */
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    /* Turns off animation for people who don't want to see them */
+    @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+            transition: none;
+        }
+    }
+
+    body,
+    html {
+        height: 100%;
+        /* Makes the body element full screen */
+        scroll-behavior: smooth;
+        /* Makes normal scrolling smooth */
+    }
 
 /* FINAL DEL CSS RESET ⬆⬆⬆ */
 
@@ -174,22 +173,29 @@ html {
 /* ROOT */
 :root {
     --white: #FFFFFF;
+    --cream: #fffdf2;
     --transparent-white: rgba(0, 0, 0, 0.011);
     --pink: rgb(240, 194, 201);
     --black: #121212;
     --transparent-light-grey: rgba(0, 0, 0, 0.2);
     --transparent-dark-grey: rgba(0, 0, 0, 0.5);
 
-    --tamano-links-menu-movil: 6rem;
-    --tamano-header-links: (0.75rem, 3vw + 0.5rem, 1.5rem);
+    --tamano-links-menu: 6rem;
+    /* Grande, se usa en los links del menú */
+
+
 
     --tamano-titulo: clamp(2.5rem, 4vw + 0.5rem, 7rem);
     --tamano-subtitulo: clamp(0.95rem, 2vw + 0.5rem, 2rem);
-    --titulo_productos: clamp(2.4rem, 3.5vw + 0.5rem, 3rem);
+
+
+
     --tamano-titulo-parrafo: clamp(1.8rem, 3vw + 0.5rem, 2.6rem);
+
     --tamano-parrafo: clamp(0.75rem, 2vw + 0.5rem, 1.5rem);
-    --tamano-parrafo-2: clamp(0.75rem, 3vw + 0.5rem, 1.5rem);
+
     --tamano-button-text: clamp(1rem, 3vw + 0.5rem, 1.5rem);
+    /* para botones, se usa */
 
     --tipografia-script: "Pinyon Script", cursive;
     --tipografia-sansserif: "Zen Kaku Gothic New", sans-serif;
@@ -245,6 +251,13 @@ p {
     @keyframes fadeInDown {
         0% { opacity: 0; transform: translateY(-50%); }
         100% { opacity: 1; transform: translateY(0)}
+    }
+    /* 4. Aparición con rotación y opacidad. 
+            Empleada en la "Polaroid" del Currículum */
+    @keyframes rotationCardThreeD {
+        0% { opacity: 0;    transform: rotate3d(-1, -1, 1, 0.0turn); }
+        50% { opacity: 0.5; transform: rotate3d(-1, -1, 1, 0.36turn); }
+        100% { opacity:1;   transform: rotate3d(-1, -1, 1, 0.95turn);}
     }
 
 
@@ -317,16 +330,7 @@ body {
         font-family: var(--tipografia-script);
         font-weight: 400;
         font-style: normal;
-        font-size: var(--tamano-links-menu-movil);
-    }
-
-    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
-    .Header-menuButton {}
-    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
-
-
-    .Header-descriptionText {
-        font-size: var(--tamano-subtitulo);
+        font-size: var(--tamano-links-menu);
     }
 
     .Header-btn {
@@ -455,6 +459,10 @@ main {
         /* opacity: 1; */
         animation: fadeInDown 3.5s forwards; 
     }
+
+    .Homepage-descriptionText {
+        font-size: var(--tamano-subtitulo);
+    }
 }
 
 
@@ -489,6 +497,7 @@ main {
         /* NOMBRES EJES visibles */
         .words-alignment {
             font-size: var(--tamano-parrafo);
+
             text-align: center;
             background-color: var(--white);
             padding: 0.5rem;
@@ -707,8 +716,6 @@ main {
         display: inline-block;
         padding: 1rem 3rem;
         margin: 0.5rem 1.5rem;
-
-        font-size: var(--tamano-header-links);
         font-family: var(--tipografia-sansserif);
         /* font-weight: bold; */
         text-align: center;
@@ -718,7 +725,6 @@ main {
         border-radius: 20px;
         background-color: var(--pink);
         color: var(--black);
-
         transition: background-color 0.3s, color 0.3s;
     }
 
@@ -731,18 +737,15 @@ main {
         color: var(--white);
         border: 1px solid var(--pink);
         box-shadow: 0 4px 8px var(--transparent-grey);
-
-        /* border-color: var(--black); */
     }
 
 
     .Trabajos-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* Dos columnas con ancho variable para móvil*/
-
+        /* Dos columnas con ancho variable para móvil, serán 3 en el media query desktop*/
         gap: 2rem;
-        /* Espacio entre elementos */
+        /* Espacio entre elementos de la cuadrícula */
         justify-content: center;
         /* Centrar el contenido horizontalmente */
     }
@@ -777,7 +780,7 @@ main {
         content: '';
         display: flex;
         padding-top: 100%;
-        /* Esto hará que el alto sea igual al ancho */
+        /* Esto hace que el alto sea igual al ancho */
     }
 
     /* Estilos para elementos visibles */
@@ -790,42 +793,41 @@ main {
     display: none; /* Ocultar el elemento */
 }
 
-    .Trabajo-uxui--1 {
+    .Trabajo-uxui--first {
         background-image: url('../img/trabajos/ux-ui/anpec/claramora_anpec_5_cuadrada.jpeg');
     }
 
-    .Trabajo-uxui--2 {
+    .Trabajo-uxui--second {
         background-image: url('../img/trabajos/ux-ui/mindbloom/mindbloom_1.png');
         background-position-y: 10%;
     }
 
-    .Trabajo-uxui--3 {
+    .Trabajo-uxui--third {
         background-image: url('../img/trabajos/ux-ui/glintshop-concept/claramora_glint_shop_concept_1.png');
     }
 
-
-    .Trabajo-grafico--1 {
+    .Trabajo-grafico--first {
         background-image: url('../img/trabajos/graphic-design/editorial/libro_editorial.png');
     }
 
-    .Trabajo-grafico--2 {
+    .Trabajo-grafico--second {
         background-image: url('../img/trabajos/graphic-design/serenates/serenates_cartel.png');
     }
 
-    .Trabajo-grafico--3 {
+    .Trabajo-grafico--third {
         background-image: url('../img/trabajos/graphic-design/casa_museu_benlliure/benlliure.png');
     }
 
 
-    .Trabajo-3d--1 {
+    .Trabajo-threeD--first {
         background-image: url('../img/trabajos/3d/calzado.png');
     }
 
-    .Trabajo-3d--2 {
+    .Trabajo-threeD--second {
         background-image: url('../img/trabajos/3d/museo.png');
     }
 
-    .Trabajo-3d--3 {
+    .Trabajo-threeD--third {
         background-image: url('../img/trabajos/3d/mobiliario.png');
     }
 
@@ -839,8 +841,6 @@ main {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    /* height: 100%; */
-    /* min-height: 100vh; */
     flex-grow: 1;
 
 
@@ -858,8 +858,6 @@ main {
     .TrabajoIndividual {
         display: flex;
         flex-direction: column;
-        /* min-height: 100vh; */
-        /* flex-grow: 1; */
     }
     
     
@@ -869,17 +867,13 @@ main {
         justify-content: flex-start;
         align-items: center;
         text-align: center;
-         /* flex-grow: 1;
-         flex-shrink: 1;
-         flex-basis: 0%; */
-         margin-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
  
     }
 
     .TrabajoIndividual-descripcion {
         margin: 10px 0;
         font-size: var(--tamano-parrafo);
-        /* flex-grow: 1; */
     }
 
 
@@ -969,26 +963,16 @@ main {
     flex-direction: column;
     margin: 0 0 5rem;
     padding: 1.5rem;
+    overflow: visible;
 
     .Curriculum-card {
         align-self: center;
         margin-top: 1.5rem;
         display: flex;
         justify-content: space-evenly;
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 0%;
-    
-        /* background-color: #9de456; */
-    
-        box-shadow: 0 4px 8px var(--transparent-light-grey);
-        border-radius: 8px;
-        overflow: hidden;
-        width: 70vw; 
-        /* max-width: 70vw;  */
-    
-        height: 80vh;
-        /* height: 80vh  */
+        align-items: flex-start;
+        overflow: visible;
+        gap: 2rem;
     
     
         .Curriculum-myName {
@@ -996,39 +980,48 @@ main {
         }
     
         .Curriculum-photo {
-            background-color: fuchsia;
-    
             display: flex;
-    
-            height: 100%; 
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+            padding:2rem 1rem;
 
-            align-items: flex-start;
-            justify-content: center;
-    
+            background-color: var(--cream);
+            height: 100%; 
+                        /* poner width 80% para obtener una imagen más pequeña; */
+            max-width: 50%;
+            box-shadow: 0 4px 8px var(--transparent-light-grey);
+            border-radius: 0.4rem;
+            /* height: 100%; */
+            height: auto;
+
+            animation: rotationCardThreeD 2s forwards; 
+
+
         }
     
         .Curriculum-photo-img {
-            /* poner width 80% para obtener una imagen más pequeña; */
-            min-width: 0%;
-            max-width: 80%;
-            height: auto;
-            
-        /* poner width auto para obtener una imagen full tamaño; */
-            /* width: auto; */
-        
-            max-height: 100%;
+            border-radius: 0.4rem;
+            padding-bottom: 2rem;
         }
+
+        .Curriculum-photoText {
+            font-size: var(--tamano-parrafo);
+            padding-bottom: 2rem;
+            align-self: flex-end;        }
     
         .Curriculum-resume {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            /* align-items: center; */
-            /* flex: 2; */
-            padding:1rem 2rem 12rem;
-            background-color: rgb(238, 150, 44);
-            /* height: auto; */
-            /* text-align: center; */
+            flex: 1;
+            padding:2rem 1rem;
+
+            height: 100%;
+            align-items: flex-start;
+
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0%;
         
         }
     
@@ -1036,14 +1029,14 @@ main {
             margin-top: 1.25rem;
             margin-bottom: 10px;
         }
-    
-        .Curriculum-p {}
-    
+        
         .Curriculum-ul {
-            list-style-type: disc;
+            list-style-type:circle;
             padding-left: 1.25rem;
         }
-        .Curriculum-li {}
+        .Curriculum-li {
+            font-size: var(--tamano-parrafo);
+        }
     
     }
 }
@@ -1084,11 +1077,17 @@ main {
             font-size: 1rem;
             cursor: pointer;
             font-weight: bold;
+
         }
     
         .Formulario-button:hover {
             color: var(--white);
             background-color: var(--pink);
+        }
+
+        .Formulario-buttonText {
+            font-size: var(--tamano-button-text);
+
         }
 
     }
@@ -1164,9 +1163,27 @@ main {
 
     /* Adaptación Currículim */
     .pagina-curriculum {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
+        
         .Curriculum-card {
+            max-width: 90%; 
+            gap:3rem ;
+            overflow: visible;
+
+
+
             .Curriculum-photo {
-                align-items: center;
+                padding:2rem;
+                
+                /* max-height: 70vh; */
+
+
+                .Curriculum-photo-img {
+
+                    max-height: 70vh;
+                    /* align-items: center; */
             }
     }
     }
