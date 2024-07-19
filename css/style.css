@@ -221,20 +221,39 @@ p {
 
 
 
-/* MOBILE FIRST */
+/* DISEÑO MOBILE FIRST */
 
-/* Index en construcción */
-.en_construccion {
-    font-size: 60px;
-    margin: 5rem;
-    background-color: var(--white);
+/* Animaciones empleadas en la página */
+
+/* Aparición hacia arriba y aumentando opacidad. Empleada en los MAIN */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-
+/* Aparición solo con aumento de opacidad */
 @keyframes moreOpacity {
     0% { opacity: 0;  }
     100% { opacity: 1;}
   }
+
+  /* Aparición hacia abajo y aumentando opacidad. Empleada en el título de la página de Inicio */
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50%); }
+    100% { opacity: 1; transform: translateY(0)}
+  }
+
+/* Animación general para los MAIN ______________________________________________*/
+/* con la carga de cada página  */
+main {
+    animation: fadeInUp 1s ease-in-out;
+}
 
 
 /* Estilos para la pagina Sobre mí ______________________________________________*/
@@ -245,61 +264,16 @@ p {
     position: relative;
     margin: 0 1.5rem ;
     padding: 1.5rem;
-
     body {
         overflow-x: hidden;
         margin: 0;
     }
 
-    .words-alignment {
-        font-size: var(--tamano-parrafo);
-        text-align: center;
-        background-color: var(--white);
-        padding: 0.5rem;
-        
-
-    }
-
-    .word {
-        position: absolute;
-        margin: 1rem;
-    }
-
-    .word-top {
-        top: 0;
-    }
-
-    .word-bottom {
-        bottom: 0;
-    }
-
-    .word-left {
-        left: 0;
-    }
-
-    .word-right {
-        right: 0;
-    }
-
-    .rotated-minus90 {
-        transform: rotate(-90deg);
-        position: relative;
-        left: -50%;
-        bottom: -3%
-    }
-
-    .rotated-plus90 {
-        transform: rotate(90deg);
-        position: relative;
-        right: -50%;
-        bottom: 3%
-    }
-
-
+    /* Contiene los títulos de los EJES FIJOS */
     .Graph-container {
         position: absolute;
         z-index: 2;
-        /* se coloca encima de .Graph-sectors */
+        /* se coloca ENCIMA de .Graph-sectors */
         justify-content: center;
         align-items: center;
         display: flex;
@@ -308,12 +282,62 @@ p {
         /* Resta el padding horizontal */
         height: calc(100vh - 4rem);
         /* Resta el padding vertical */
+    
 
-        
+        /* NOMBRES EJES visibles */
+        .words-alignment {
+            font-size: var(--tamano-parrafo);
+            text-align: center;
+            background-color: var(--white);
+            padding: 0.5rem;
+        }
+
+        .word {
+            position: absolute;
+            margin: 1rem;
+        }
+
+        /* Eje superior: Plano tangible */
+        .word-top {
+            top: 0;
+        }
+
+        /* Eje inferior: Plano etéreo */
+        .word-bottom {
+            bottom: 0;
+        }
+
+        /* Eje izquierdo: Cuestión metafísica */
+        .word-left {
+            left: 0;
+        }
+
+        /* Eje derecho: Cuestión terrenal */
+        .word-right {
+            right: 0;
+        }
+
+        /* Rotación de "Cuestión metafísica" */
+        .rotated-minus90 {
+            transform: rotate(-90deg);
+            position: relative;
+            left: -50%;
+            bottom: -3%
+        }
+
+        /* Rotación de "Cuestión terrenal" */
+        .rotated-plus90 {
+            transform: rotate(90deg);
+            position: relative;
+            right: -50%;
+            bottom: 3%
+        }
     }
 
 
-
+    /* SECTORES del gráfico. 
+    Contiene 4 sectores delimitados
+    y los puntos o elementos de la personalidad */
     .Graph-sectors {
         position: relative;
         display: flex;
@@ -324,168 +348,140 @@ p {
         height: 100vh;
         /* Altura total de la pantalla */
         z-index: 1;
-        /* se coloca encima debajo de .Graph-container */
+        /* se coloca DEBAJO de .Graph-container */
         margin: 0;
         width: calc(100vw - 5rem);
         height: calc(100vh - 5rem);
         /* Ancho y alto totales de la pantalla, menos los margenes */
 
+        .Graph-top,
+        .Graph-bottom {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            /* Ocupa el ancho completo del gráfico */
+            height: 50%;
+            /* Ambas mitades suman el 100% vertical */
+            position: relative;
+        }
+
+            .Graph-topLeft,
+            .Graph-topRight,
+            .Graph-bottomLeft,
+            .Graph-bottomRight {
+                width: 50%;
+                /* Divide el ancho en dos */
+                height: 100%;
+                /* Ocupa la altura completa del gráfico */
+                position: relative; 
+            }
         
+            /* ------------------------------------------------------------ */
 
-    }
+            /* LÍNEAS DEL EJE cartesiano,
+            creadas con los BORDES NEGROS de los sectores */
+            .Graph-topLeft {
+                border-right: 1px solid var(--black);
+            }
 
-    .Graph-top,
-    .Graph-bottom {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        /* Ocupa el ancho completo del gráfico */
-        height: 50%;
-        /* Ambas mitades suman el 100% vertical */
-        position: relative;
+            .Graph-topRight {
+                border-left: 1px solid var(--black);
+            }
 
-        
-    }
+            .Graph-bottomLeft {
+                border-right: 1px solid var(--black);
+            }
 
-    .Graph-topLeft,
-    .Graph-topRight,
-    .Graph-bottomLeft,
-    .Graph-bottomRight {
-        width: 50%;
-        /* Divide el ancho en dos */
-        height: 100%;
-        /* Ocupa la altura completa del gráfico */
-        position: relative;
-        
-    }
+            .Graph-bottomRight {
+                border-left: 1px solid var(--black);
+            }
 
+            .Graph-top {
+                border-bottom: 1px solid var(--black);
+            }
 
-    /* Estilo de los puntos del gráfico */
-    .point {
-        /* border-radius: 50%; */
-        /* color rosa de fondo */
-        /* background-color: var(--pink); */
-        /* width: 80px;
-        height: 80px; */
-        /* min-height: 20px;
-        min-width: 20px; */
+            .Graph-bottom {
+                border-top: 1px solid var(--black);
+            }
 
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        /* transition: transform 2s ease-in; */
+            /* ------------------------------------------------------------ */
 
+            /* PUNTOS DE LA PERSONALIDAD con IMAGEN   */
+            .point {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                /* transition: transform 2s ease-in; */
+            }
 
+            /* PUNTOS DE LA PERSONALIDAD: Tamaño de las IMÁGENES  */
+            .ascii {
+                width: clamp(100px, 20vw, 220px);
+                height: clamp(100px, 20vh, 300px);   
+            }
 
-    }
+            /* PUNTOS DE LA PERSONALIDAD: Textos */
+            .point-text {
+                /* ancho del texto */
+                max-width: 160px;
+                text-align: center;
+                /* sombreado blanco para diferenciar mejor el texto de la imagen */
+                text-shadow: 0px 0px 10px #ffffff;     
+                font-size: var(--tamano-parrafo);
+                animation: moreOpacity 3s forwards; 
+            }
 
+            /* PUNTOS DE LA PERSONALIDAD: Colocación según sector asignado y RUTA a imagen */
 
+            /* "Diseño": colocación e imagen */
+            .center {
+                align-self: center;
+                /* imagen ASCII ilustrativa */
+                background-image: url(/img/sobre-mi/mesolithic-picks-ascii.png);
+            }
 
+            /* "Observación y análisis": colocación e imagen */
+            .topLeft {
+                left: 15%;
+                top: 15%;
+                /* imagen ASCII ilustrativa */
+                background-image: url(/img/sobre-mi/ojo1_ascii-modified.png);
+            }
 
+            /* "Conciencia social y medioambiental": colocación e imagen */
+            .topRight {
+                right: 10%;
+                top: 25%;
+                /* imagen ASCII ilustrativa */
+                background-image: url(/img/sobre-mi/cartel-ascii.png);
+            }
 
-    /* Estilo de los textos de los puntos del gráfico */
-    .point-text {
-        /* ancho del texto */
-        max-width: 160px;
-        text-align: center;
-        padding: rem;
-        font-size: var(--tamano-parrafo);
-        /* border-radius: 0.5rem; */
-        animation: moreOpacity 3s forwards; 
+            /* "Lazos sociales": colocación e imagen */
+            .bottomLeft {
+                left: 15%;
+                bottom: 25%;
+                /* imagen ASCII ilustrativa */
+                background-image: url(/img/sobre-mi/lazo_ascii-modified.png);
+            }
 
-
-        
-    }
-
-
-
-    /* Colocación de los puntos según el sector
-    al que he asignado su posición */
-    .center {
-        align-self: center;
-        /* width: 100px;
-        height: 100px; */
-    }
-    .topLeft {
-        left: 15%;
-        top: 15%;
-        /* width: 100px;
-        height: 100px; */
-
-        /* imagen ASCII ilustrativa */
-        background-image: url(/img/sobre-mi/ojo1_ascii-modified.png);
-        
-
-    }
-
-
-
-
-
-    .topRight {
-        right: 10%;
-        top: 25%;
-    }
-    .bottomLeft {
-        left: 15%;
-        bottom: 25%;
-
-        /* imagen ASCII ilustrativa */
-        background-image: url(/img/sobre-mi/lazo_ascii-modified.png);
-
-
-
-    }
-    .bottomRight {
-        right: 15%;
-        bottom: 15%;
-    }
-
-    .ascii {
-        /* tamaño de las imágenes ASCII */
-
-        width: clamp(100px, 20vw, 220px);
-        height: clamp(100px, 20vh, 300px);
-        
-    }
-
-    /* SECTORES del gráfico, sus bordes negros
-    crean las líneas del gráfico */
-    .Graph-topLeft {
-        border-right: 1px solid var(--black);
-    }
-
-    .Graph-topRight {
-        border-left: 1px solid var(--black);
-    }
-
-    .Graph-bottomLeft {
-        border-right: 1px solid var(--black);
-    }
-
-    .Graph-bottomRight {
-        border-left: 1px solid var(--black);
-
-    }
-
-    .Graph-top {
-        border-bottom: 1px solid var(--black);
-    }
-
-    .Graph-bottom {
-        border-top: 1px solid var(--black);
+            /* "Expresión digital": colocación e imagen */
+            .bottomRight {
+                right: 15%;
+                bottom: 15%;
+                /* imagen ASCII ilustrativa */
+                background-image: url(/img/sobre-mi/battery-ascii.png);
+            }
+            
     }
 
 }
 
 
-
-
-/* Estilos para la pagina Trabajos ______________________________________________*/
+/* Estilos para la página Trabajos ______________________________________________*/
 .pagina-trabajos {
     margin: 0 0 5rem;
     padding: 1.5rem;
@@ -494,21 +490,17 @@ p {
     flex-direction: column;
 
     /* CAMBIOS 16 JULIO */
-    /* flex: 1; */
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
 
 
-
-    
     .Trabajos-filters {
         display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         margin: 1.5rem 0rem;
-
     }
 
 
@@ -544,8 +536,9 @@ p {
 
     .Trabajos-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* Tres columnas con ancho variable */
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas con ancho variable para móvil*/
+
         gap: 2rem;
         /* Espacio entre elementos */
         justify-content: center;
@@ -591,16 +584,14 @@ p {
     }
 
     /* Estilos para elementos visibles */
-    .Trabajo-preview.isActive {
-        display: flex;
+.Trabajo-preview.isActive {
+    display: flex; /* Mostrar el elemento */
+}
 
-    }
-
-    /* Estilos para elementos ocultos */
-    .Trabajo-preview.isHidden {
-        display: none;
-    }
-
+/* Estilos para elementos ocultos */
+.Trabajo-preview.isHidden {
+    display: none; /* Ocultar el elemento */
+}
 
     .Trabajo-uxui--1 {
         background-image: url('../img/trabajos/ux-ui/anpec/claramora_anpec_5_cuadrada.jpeg');
@@ -649,90 +640,91 @@ p {
 
 
 /* Estilos para la pagina INDIVIDUAL de cada trabajo  ______________________________________________*/
-
 .pagina-trabajo-individual {
     margin: 0;
     padding: 0;
     height: 100%;
+
+    .TrabajoIndividual {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .TrabajoIndividual-contenido {
+        margin-bottom: 20px;
+    }
+    
+    .TrabajoIndividual-titulo {
+        font-size: 2rem;
+        margin: 0;
+    }
+    
+    .TrabajoIndividual-descripcion {
+        margin: 10px 0;
+    }
+    
+    .TrabajoIndividual-etiquetas {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .TrabajoIndividual-tag {
+        font-size: var(--tamano-parrafo);
+        color: white;
+        background-color: #37e15f;
+        padding: 0.5rem 0.8rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.218);
+    }
+    
+    .TrabajoIndividual-carrusel {
+        position: relative;
+        width: 400px;
+        overflow: hidden;
+    }
+    
+    .TrabajoIndividual-sliderImages {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .TrabajoIndividual-sliderImages img {
+        width: 400px;
+        flex-shrink: 0;
+    }
+    
+    .btnPrev,
+    .btnNext {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .btnPrev {
+        left: 10px;
+    }
+    
+    .btnNext {
+        right: 10px;
+    }
+    
+    .Slider-contador {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
 }
 
-.TrabajoIndividual {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.TrabajoIndividual-contenido {
-    margin-bottom: 20px;
-}
-
-.TrabajoIndividual-titulo {
-    font-size: 2rem;
-    margin: 0;
-}
-
-.TrabajoIndividual-descripcion {
-    margin: 10px 0;
-}
-
-.TrabajoIndividual-etiquetas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.TrabajoIndividual-tag {
-    font-size: var(--tamano-parrafo);
-    color: white;
-    background-color: #37e15f;
-    padding: 0.5rem 0.8rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.218);
-}
-
-.TrabajoIndividual-carrusel {
-    position: relative;
-    width: 400px;
-    overflow: hidden;
-}
-
-.TrabajoIndividual-sliderImages {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.TrabajoIndividual-sliderImages img {
-    width: 400px;
-    flex-shrink: 0;
-}
-
-.btnPrev,
-.btnNext {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.btnPrev {
-    left: 10px;
-}
-
-.btnNext {
-    right: 10px;
-}
-
-.Slider-contador {
-    text-align: center;
-    margin-top: 10px;
-}
 
 
 
@@ -1185,10 +1177,6 @@ body {
 /* Opacidad de 0% a 100% aplicada en la propiedad animation de #animatedText */
 
 
-  @keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-50%); }
-    100% { opacity: 1; transform: translateY(0)}
-  }
 
 
 
@@ -1204,33 +1192,25 @@ body {
 
 /* @media (min-width: 768px) { */
 
-    @media  screen  (min-width: 769px) {
-
+/* MEDIA QUERY PARA DESKTOP */
+@media (min-width: 768px) {
     .Footer {
         display: flex;
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-between;
     }
+
     .Footer-ul {
         align-items: flex-start;
-
-    }
-
-    .point {
-        width: 120px;
-        height: 120px;
     }
 
 
-    .ascii {
-        /* tamaño de las imágenes ASCII */
-        /* width: 200px;
-        height: 200px; */
-        
+    .pagina-trabajos {
+        .Trabajos-grid {
+            grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas más grandes */
+        }
     }
-
-
 }
 
 
