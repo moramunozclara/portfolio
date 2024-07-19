@@ -174,17 +174,13 @@ html {
 /* ROOT */
 :root {
     --white: #FFFFFF;
-
+    --transparent-white: rgba(0, 0, 0, 0.011);
     --pink: rgb(240, 194, 201);
-
-    --magenta: pink;
-
     --black: #121212;
-
-    --transparent-grey: rgba(0, 0, 0, 0.5);
+    --transparent-light-grey: rgba(0, 0, 0, 0.2);
+    --transparent-dark-grey: rgba(0, 0, 0, 0.5);
 
     --tamano-links-menu-movil: 6rem;
-
     --tamano-header-links: (0.75rem, 3vw + 0.5rem, 1.5rem);
 
     --tamano-titulo: clamp(2.5rem, 4vw + 0.5rem, 7rem);
@@ -269,14 +265,12 @@ p {
     flex-direction: column;
 }
 
-
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-/* CAMBIOS 16 JULIO */
 body {
     display: flex;
     flex-direction: column;
@@ -295,20 +289,12 @@ body {
     /* margin: 0rem 0rem 2rem 0rem; */
     padding: 0.3rem 0rem;
     background-color: var(--pink);
-    z-index: 1000;
+    z-index: 99;
+     /* Se pone un orden de contenidos alto (máximo 100) para que ningún
+    elemento creado a posteriori con el mismo ajuste pueda
+    quedar por encima mi menú */    
 
     align-items: center;
-
-
-    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
-    /* Estilos para la imagen de fondo */
-    .Header-picture--fondo {}
-    .Header-fondoImg {}
-    /* Estilos para la imagen del logo */
-    .Header-logo {}
-    .Header-logoImg {}
-    /* ❌❌❌❌❌❌❌❌  BORRAR ❌❌❌❌❌❌❌❌   */
-
 
 
     .Header-ul {
@@ -345,7 +331,10 @@ body {
 
     .Header-btn {
         display: block;
-        z-index: 1000;
+        z-index: 99;
+        /* Se pone un orden de contenidos alto (máximo 100) para que ningún
+        elemento creado a posteriori con el mismo ajuste pueda
+        quedar por encima del botón de mi menú */    
     }
 
     .Header-svg {
@@ -379,10 +368,8 @@ body {
 
     .Header-nav.isActive {
         height: 100vh;
-        z-index: 999;
-        /* Se pone un orden de contenidos muy alto para que ningún
-        elemento creado a posteriori con el mismo ajuste pueda
-        quedar por encima de los contenidos de mi menú abierto */
+        z-index: 98;
+        /* Un escalón más abajo que el Header y que el botón del menú */
         position: fixed;
         /* Se coloca sobre todo el contenido del main, 
         para que éste no se desplace abajo */
@@ -457,11 +444,6 @@ main {
     /* Ajuste para hacer que la altura del Homepage sea la máxima posible,
     sin sumar el tamaño del font size del letrero */
     min-height: calc(100vh - 2rem);
-    /* FIX  en el mediaquery para desktop:
-    .Homepage {
-        min-height: calc(100vh - 3rem);
-    }
-     */
     position: relative;
 
     /* Animación del texto de la Homepage */
@@ -705,11 +687,8 @@ main {
 .pagina-trabajos {
     margin: 0 0 5rem;
     padding: 1.5rem;
-
     display: flex;
     flex-direction: column;
-
-    /* CAMBIOS 16 JULIO */
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 0%;
@@ -779,13 +758,10 @@ main {
         align-items: center;
         justify-content: center;
         position: relative;
-
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-
-        color: rgba(0, 0, 0, 0.011);
-
+        color: var(--transparent-white);
         font-size: var(--tamano-subtitulo);
         overflow: hidden;
         transition: background-size 1.5s, color 0.3s, text-shadow 0.3s;
@@ -795,7 +771,6 @@ main {
         background-size: calc(100% + 20%);
         color: var(--white);
         text-shadow: 0px 0px 20px var(--black);
-
     }
 
     .Trabajo-preview::before {
@@ -929,7 +904,7 @@ main {
         background-color: #37e15f;
         padding: 0.5rem 0.8rem;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.218);
+        box-shadow: 0 4px 8px var(--transparent-light-grey);
         text-align: center;
     }
     
@@ -941,7 +916,7 @@ main {
         width: 100%;
         overflow: hidden;
         max-height: 70vh;
-        altura máxima del slider
+        /* altura máxima del slider */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -964,7 +939,7 @@ main {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: var(--transparent-grey);
+        background-color: var(--transparent-dark-grey);
         border-radius: 20px;
         color: white;
         border: none;
@@ -987,16 +962,6 @@ main {
     
 }
 
-    /* BORRAR */
-    .TrabajoIndividual-carrusel {
-        /* display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        width: 100%; */
-    }
-
-
 
 /* Estilos para la pagina Currículum ____________________________________________*/
 .pagina-curriculum {
@@ -1004,12 +969,6 @@ main {
     flex-direction: column;
     margin: 0 0 5rem;
     padding: 1.5rem;
-
-    /* CAMBIOS 16 JULIO */
-    /*     
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%; */
 
     .Curriculum-card {
         align-self: center;
@@ -1022,7 +981,7 @@ main {
     
         /* background-color: #9de456; */
     
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px var(--transparent-light-grey);
         border-radius: 8px;
         overflow: hidden;
         width: 70vw; 
@@ -1040,10 +999,11 @@ main {
             background-color: fuchsia;
     
             display: flex;
-            justify-content: center;
-            align-items: center;
     
             height: 100%; 
+
+            align-items: flex-start;
+            justify-content: center;
     
         }
     
@@ -1201,8 +1161,14 @@ main {
         }
         
     }
+
+    /* Adaptación Currículim */
+    .pagina-curriculum {
+        .Curriculum-card {
+            .Curriculum-photo {
+                align-items: center;
+            }
+    }
+    }
+
 }
-
-
-
-
