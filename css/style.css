@@ -451,6 +451,11 @@ main {
     min-height: calc(100vh - 2rem);
     position: relative;
 
+    .Homepage-textoInicial {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     /* Animación del texto de la Homepage */
     #animatedText {
         position: absolute;
@@ -462,7 +467,10 @@ main {
     }
 
     .Homepage-descriptionText {
-        font-size: var(--tamano-subtitulo);
+        font-size: var(--tamano-parrafo);
+        font-family: var(--tipografia-sansserif);
+        align-items: center;
+        animation: moreOpacity 6s forwards;
     }
 }
 
@@ -718,7 +726,6 @@ main {
         padding: 1rem 3rem;
         margin: 0.5rem 1.5rem;
         font-family: var(--tipografia-sansserif);
-        /* font-weight: bold; */
         text-align: center;
         text-decoration: none;
         cursor: pointer;
@@ -873,7 +880,7 @@ main {
     }
 
     .TrabajoIndividual-descripcion {
-        margin: 10px 0;
+        margin: 0.625rem 0;
         font-size: var(--tamano-parrafo);
     }
 
@@ -881,7 +888,7 @@ main {
 
     .TrabajoIndividual-titulo {
         font-size: 2rem;
-        margin: 10px 0;
+        margin: 0.625rem 0;
         font-family:var(--tipografia-sansserif) ;
     }
 
@@ -889,9 +896,9 @@ main {
     .TrabajoIndividual-etiquetas {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 0.625rem;
         justify-content: center;
-        margin: 10px
+        margin: 0.625rem
     }
     
     .TrabajoIndividual-tag {
@@ -899,7 +906,7 @@ main {
         color: white;
         background-color: #37e15f;
         padding: 0.5rem 0.8rem;
-        border-radius: 10px;
+        border-radius: 0.625rem;
         box-shadow: 0 4px 8px var(--transparent-light-grey);
         text-align: center;
     }
@@ -924,7 +931,7 @@ main {
         transition: transform 0.5s ease;
     }
     
-    .TrabajoIndividual-sliderImages img {
+    .TrabajoIndividual-sliderImages picture {
         height: 100%;
         object-fit: cover;
         flex-shrink: 0;
@@ -940,16 +947,16 @@ main {
         border-radius: 20px;
         color: var(--white);
         border: none;
-        padding: 10px;
+        padding: 0.625rem;
         cursor: pointer;
     }
     
     .btnPrev {
-        left: 10px;
+        left: 0.625rem;
     }
     
     .btnNext {
-        right: 10px;
+        right: 0.625rem;
     }
     
 }
@@ -1025,7 +1032,7 @@ main {
     
         .Curriculum-resumeTitles {
             margin-top: 1.25rem;
-            margin-bottom: 10px;
+            margin-bottom: 0.625rem;
         }
         
         .Curriculum-ul {
@@ -1044,10 +1051,10 @@ main {
 /* Estilos para la pagina Contacta: FORMULARIO __________________________________*/
 .pagina-contacta {
     padding: 1.5rem;
+    font-size: var(--tamano-parrafo);
 
     .Formulario {
         padding: 2rem;
-        margin: 2rem;
     
         display: flex;
         flex-direction: column;
@@ -1070,17 +1077,26 @@ main {
         }
     
         .Formulario-button {
-            padding: 1rem;
-            border: 1px solid var(--black);
-            font-size: 1rem;
+            display: inline-block;
+            padding: 1rem 3rem;
+            margin: 0.5rem 1.5rem;
+            font-family: var(--tipografia-sansserif);
+            text-align: center;
+            text-decoration: none;
             cursor: pointer;
-            font-weight: bold;
+            border: 1px solid var(--black);
+            border-radius: 20px;
+            background-color: var(--pink);
+            color: var(--black);
+            transition: background-color 0.3s, color 0.3s;
 
         }
     
         .Formulario-button:hover {
+            background-color: var(--black);
             color: var(--white);
-            background-color: var(--pink);
+            border: 1px solid var(--pink);
+            box-shadow: 0 4px 8px var(--transparent-grey);
         }
 
         .Formulario-buttonText {
@@ -1123,22 +1139,11 @@ main {
     /* Adaptación Trabajos individuales con slider */
     .pagina-trabajo-individual {
 
-
-        .TrabajoIndividual-volver {
-            align-self: flex-start;
-        }
-    
-        .TrabajoIndividual-titulo,
         .TrabajoIndividual-descripcion {
             text-align: left;
             max-width: 65%;        
         }
-    
-        .TrabajoIndividual-etiquetas {
-            justify-content: flex-start;
 
-        }
-        
     }
 
     /* Adaptación Currículim */
@@ -1156,7 +1161,6 @@ main {
                 padding:2rem;
 
                 .Curriculum-photo-img {
-
                     max-height: 70vh;
                 }
 
